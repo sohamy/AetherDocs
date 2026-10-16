@@ -92,6 +92,7 @@
 
   const DOCS = [
     ['world', '세계관', '에테르, 아스트라, 대낙성, 성좌와 계약, 연표'],
+    ['lore', '생활 설정집', '음식, 옷, 집, 돈, 축제, 종족 문화, 시스템 → 세계관 답'],
     ['story', '스토리', '메인 미스터리, 장 구성, 반전, 네 주인공 관계'],
     ['growth', '성장 · 인크리멘탈', '5단계 해방, 재화, 공식, 시즌 초월'],
     ['combat', '전투 · 직업', '자동사냥, 탐사대, 4직업 8속성, 상성, 엘리트 AI'],
@@ -381,7 +382,7 @@
   }));
   function renderGallery() {
     $('#gallery').innerHTML = SHEETS.filter(s => galState.who === 'all' || s.who === galState.who).map(s =>
-      `<button data-zoom="${sheetSrc(s.key)}" data-cap="${s.who} · ${s.title}"><img src="${sheetSrc(s.key)}" alt="${s.who} ${s.title}" loading="lazy"><div class="cap"><b>${s.who}</b>${s.title}</div></button>`).join('');
+      `<button data-zoom="${(s.src || sheetSrc(s.key))}" data-cap="${s.who} · ${s.title}"><img src="${(s.src || sheetSrc(s.key))}" alt="${s.who} ${s.title}" loading="lazy"><div class="cap"><b>${s.who}</b>${s.title}</div></button>`).join('');
   }
   renderGallery();
 

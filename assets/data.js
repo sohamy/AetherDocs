@@ -297,7 +297,7 @@ const MONSTERS = [
   { name: '뇌운 박쥐', region: 4, element: 'thunder', grade: '일반', lv: '70–76', emoji: '🦇', added: true,
     desc: '작은 먹구름을 날개에 달고 다니는 박쥐.', behavior: '하늘에서 작은 번개를 떨어뜨린다. 땅의 그림자를 보고 피해야 한다.', drops: ['먹구름 솜', '정전기 날개'] },
   { name: '화난 용암 멧돼지', region: 4, element: 'fire', grade: '엘리트', lv: '72', emoji: '🐗', trait: '화난',
-    desc: '용암 온천에서 목욕을 방해받은 멧돼지. 등털이 활활 탄다.', behavior: '플레이어를 계속 추적하며 지나간 자리에 불길을 남긴다.', drops: ['용암 엄니', '불씨 가죽'] },
+    desc: '용암 온천에서 목욕을 방해받은 멧돼지. 등털이 활활 탄다.', behavior: '플레이어를 계속 추적하며 지나간 자리에 불길을 남긴다.', drops: ['용암 엄니', '불씨 털뭉치'] },
   { name: '겁쟁이 번개 고슴도치', region: 4, element: 'thunder', grade: '엘리트', lv: '75', emoji: '🦔', trait: '겁쟁이',
     desc: '가시 하나하나가 번개를 머금은 고슴도치. 너무 겁이 많아 몸을 말고만 있다.', behavior: '몸을 말고 굴러 도망친다. 공격하면 가시 번개를 사방으로 쏜다.', drops: ['번개 가시', '펫: 찌릿 햄스터(낮은 확률)'] },
   { name: '뇌명의 사자 「볼트렉스」', region: 4, element: 'thunder', grade: '보스', lv: '80', emoji: '🦁', added: true,
@@ -305,7 +305,7 @@ const MONSTERS = [
 
   // 5. 잠든 성도
   { name: '달그늘 늑대', region: 5, element: 'dark', grade: '일반', lv: '80–86', emoji: '🐺',
-    desc: '그림자가 몸에서 분리돼 따로 움직이는 늑대. 그림자 쪽이 더 사납다.', behavior: '본체와 그림자가 번갈아 공격한다. 그림자를 먼저 쓰러뜨리면 본체는 순해진다.', drops: ['달그늘 가죽', '그림자 실'] },
+    desc: '그림자가 몸에서 분리돼 따로 움직이는 늑대. 그림자 쪽이 더 사납다.', behavior: '본체와 그림자가 번갈아 공격한다. 그림자를 먼저 쓰러뜨리면 본체는 순해진다.', drops: ['달그늘 털뭉치', '그림자 실'] },
   { name: '그림자 인형', region: 5, element: 'dark', grade: '일반', lv: '82–88', emoji: '🧸', added: true,
     desc: '성도 아이들이 갖고 놀던 인형이 남은 별빛으로 움직이는 것. 아직도 놀이 상대를 찾는다.', behavior: '술래잡기를 한다. 등을 보이면 다가오고, 쳐다보면 멈춘다.', drops: ['낡은 단추', '추억의 실밥'] },
   { name: '램프나방', region: 5, element: 'light', grade: '일반', lv: '85–92', emoji: '🦋', added: true,
@@ -409,6 +409,7 @@ const FORMS = [
 ];
 
 const SHEETS = [
+  { key: 'keyart', who: '전체', title: '메인 키 아트 · 탐사대 4인', src: 'assets/img/keyart.webp' },
   { key: 'lumi-body', who: '루미', title: '베이스 바디 3면도' },
   { key: 'lumi-hood', who: '루미', title: '후드 & 케이프 조립도' },
   { key: 'lumi-hood2', who: '루미', title: '후드·귀·장식 파츠' },

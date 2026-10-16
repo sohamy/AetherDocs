@@ -23,6 +23,7 @@
     <div class="tab-group"><span class="tab-group-label">기획서</span>
       <button class="tab" role="tab" data-tab="overview">개요</button>
       <button class="tab" role="tab" data-tab="world">세계관</button>
+      <button class="tab" role="tab" data-tab="lore">생활 설정집</button>
       <button class="tab" role="tab" data-tab="story">스토리</button>
       <button class="tab" role="tab" data-tab="growth">성장 · 인크리멘탈</button>
       <button class="tab" role="tab" data-tab="combat">전투 · 직업</button>
@@ -56,6 +57,11 @@
     </div>
     <div class="hero-cast" id="heroCast"></div>
   </div>
+
+  <figure class="keyart">
+    <button type="button" data-zoom="assets/img/keyart.webp" data-cap="Project Aether · 메인 키 아트"><img src="assets/img/keyart.webp" alt="Project Aether 메인 키 아트 — 루미, 네무, 포코, 모리와 장비" loading="lazy"></button>
+    <figcaption>메인 키 아트 — Tiny hunters, brighter skies. 탐사대 4인과 대표 장비. 누르면 크게 볼 수 있다.</figcaption>
+  </figure>
 
   <div class="doc">
     <aside class="toc"><b>목차</b>
@@ -263,6 +269,340 @@
           <div class="card"><q>별똥별 근처엔 위험한 애들이 많아.</q></div>
           <div class="card"><q>그래도 예쁘긴 하더라.</q></div>
         </div>
+        <p style="margin-top:14px">먹고, 입고, 자고, 거래하고, 다치는 일상의 설정은 <a href="#lore">생활 설정집</a>에 정리했다.</p>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 생활 설정집 ═══════════════════ -->
+<section class="panel" id="lore" role="tabpanel">
+  <div class="doc">
+    <aside class="toc"><b>목차</b>
+      <a href="#l-0">0. 이 문서의 쓰임</a><a href="#l-1">1. 세 가지 법칙</a><a href="#l-2">2. 별빛의 성질</a><a href="#l-3">3. 몸 · 다침 · 회복</a><a href="#l-4">4. 음식</a><a href="#l-5">5. 음식 목록</a><a href="#l-6">6. 옷과 소재</a><a href="#l-7">7. 집과 마을</a><a href="#l-8">8. 돈과 거래</a><a href="#l-9">9. 하루 · 계절 · 축제</a><a href="#l-10">10. 사회와 직업</a><a href="#l-11">11. 종족별 문화</a><a href="#l-12">12. 이름 짓기</a><a href="#l-13">13. 말 · 글 · 배움</a><a href="#l-14">14. 기술과 도구</a><a href="#l-15">15. 이동과 연락</a><a href="#l-16">16. 동물 · 몬스터 생태</a><a href="#l-17">17. 삶과 죽음 · 믿음</a><a href="#l-18">18. 놀이와 문화</a><a href="#l-19">19. 시스템 → 세계관 답</a><a href="#l-20">20. 하지 않는 것</a>
+    </aside>
+    <div class="doc-body">
+      <div class="doc-head">
+        <div class="doc-meta"><span>문서 <b>PA-01b</b></span><span>버전 <b>v0.1</b></span><span>담당 <b>세계관 · 전 부서 공용</b></span><span>상태 <b>보완(신규)</b></span></div>
+        <h1>생활 설정집</h1>
+        <p class="lead">“쟤들 뭐 먹어?”에 바로 답할 수 있는 문서. 시스템 기획자가 포션 하나, 탈것 하나를 만들 때 <b>세계관 안에서 무엇으로 만들지</b>를 여기서 찾는다.</p>
+        <div class="legend-add"><span class="badge-add">보완</span> 이 탭 전체가 원안 이후 새로 쓴 설정이다.</div>
+      </div>
+
+      <section class="sec" id="l-0"><h2><span class="no">00</span>이 문서의 쓰임</h2>
+        <div class="callout intent">새 시스템을 만들 때 순서: ① 시스템이 필요로 하는 것(회복, 이동, 저장…)을 정한다 → ② 이 문서에서 “에테르에서는 그걸 무엇으로 하는가”를 찾는다 → ③ 없으면 <a href="#l-1">세 가지 법칙</a>에 맞게 새로 정하고 이 문서에 추가한다.</div>
+        <div class="card">
+          <div class="k">예시 — 선배 질문</div>
+          <h4>“체력 회복 포션을 만들었다. 음식으로 할 거다. 쟤들 뭐 먹어?”</h4>
+          <p>→ 에테르의 수인은 <b>별빛이 고인 식물성 음식</b>을 먹는다(<a href="#l-4">4. 음식</a>). 다치면 몸에서 별빛이 새어 나가므로(<a href="#l-3">3. 몸</a>), 별빛을 다시 채우는 음식이 곧 약이다.</p>
+          <p>→ 기본 체력 회복은 <b>도토리빵</b>(초원 · 싸고 흔함), 중급은 <b>별꿀 경단</b>, 상급은 <b>별핵 사탕</b>. 별빛(마나) 회복은 마시는 쪽 — <b>별이슬 차</b>. 힐러 네무가 들고 다니는 “치유의 포션” 병의 정체는 <b>꽃잎 별이슬 시럽</b>이다.</p>
+          <p style="margin:0">→ 그래서 상점은 <b>약국이 아니라 빵집·찻집</b>이고, 포션 아이콘은 병 대신 빵·찻잔·사탕이 된다.</p>
+        </div>
+      </section>
+
+      <section class="sec" id="l-1"><h2><span class="no">01</span>세 가지 법칙</h2>
+        <p>모든 새 설정은 이 셋에 어긋나지 않아야 한다.</p>
+        <div class="grid g3">
+          <div class="card"><div class="k">법칙 ①</div><h4>모든 힘은 별빛에서 온다</h4><p>빛, 열, 생명, 성장, 마법 — 전부 별빛이다. 무언가 움직이거나 자라거나 낫는다면 “어디서 별빛을 얻었는가”를 설명할 수 있어야 한다.</p></div>
+          <div class="card"><div class="k">법칙 ②</div><h4>모든 것은 작은 몸 기준이다</h4><p>수인은 키 30~40cm. 도토리 하나가 한 끼, 꽃잎 한 장이 손수건, 고양이만 한 다람쥐는 거인이다. 크기를 정할 땐 수인 손바닥을 자로 쓴다.</p></div>
+          <div class="card"><div class="k">법칙 ③</div><h4>부서져도 따뜻하다</h4><p>세계는 한 번 부서졌지만 일상은 다정하다. 피·시체·굶주림 같은 직접적인 고통 대신, 반짝임이 새어 나가고, 잠들고, 다시 깨어난다.</p></div>
+        </div>
+      </section>
+
+      <section class="sec" id="l-2"><h2><span class="no">02</span>별빛의 성질</h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>형태</th><th>모습</th><th>성질</th><th>생활에서 쓰는 곳</th></tr>
+          <tr><td>✦ 별가루</td><td>반짝이는 고운 가루</td><td>가장 묽은 별빛. 공기 중에 흩어지기 쉽다. 밤이면 하늘에서 조금씩 내린다.</td><td>등불 연료, 음식 보존, 화폐, 장비에 먹여 강화</td></tr>
+          <tr><td>✧ 별빛</td><td>손에 쥐면 따뜻한 빛 덩어리</td><td>별가루 100을 눌러 담은 밀도. 생물의 몸속에 흐른다.</td><td>마법, 치유, 성좌와의 공명</td></tr>
+          <tr><td>◆ 별핵</td><td>단단하고 맥박치는 결정</td><td>별빛이 굳은 것. 스스로 빛과 열을 낸다. 잘못 다루면 주변을 뒤틀리게 한다.</td><td>마을 난방, 큰 마법, 계정 단위의 힘</td></tr>
+          <tr><td>⚠ 탁한 별빛</td><td>보랏빛·잿빛으로 일렁임</td><td>대낙성 때 깨진 채 떨어진 불안정한 별빛. 생물에 들어가면 몬스터가 된다.</td><td>쓰지 않는다. 헌터가 정화해서 별가루로 되돌린다.</td></tr>
+        </table></div>
+        <div class="grid g2">
+          <div class="card"><h4>별빛은 어디에 고이나</h4><ul><li><b>식물</b>에 가장 많이 고인다 — 뿌리로 땅의 별가루를, 잎으로 하늘의 별빛을 받는다.</li><li><b>물</b>은 별빛을 녹여 담는다 — 새벽 이슬이 가장 진하다.</li><li><b>돌</b>은 오래 머금는다 — 별 조각이 박힌 바위는 수백 년 빛난다.</li></ul></div>
+          <div class="card"><h4>별빛은 어떻게 사라지나</h4><ul><li>쓰면 열과 빛이 되어 흩어진다.</li><li>흩어진 별빛은 하늘로 올라가 언젠가 별가루로 다시 내린다 — <b>순환</b>.</li><li>그래서 “별빛을 아낀다”는 말은 이 세계에서 “전기를 아낀다”와 같다.</li></ul></div>
+        </div>
+      </section>
+
+      <section class="sec" id="l-3"><h2><span class="no">03</span>몸 · 다침 · 회복</h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>상황</th><th>세계관</th><th>화면 표현</th><th>시스템</th></tr>
+          <tr><td>살아 있음</td><td>몸속에 별빛이 흐른다. 털 끝이 살짝 빛나는 수인일수록 건강하다.</td><td>—</td><td>체력 = 몸에 담긴 별빛</td></tr>
+          <tr><td>다침</td><td>상처에서 피 대신 별빛이 새어 나간다.</td><td>반짝이는 입자가 튄다. 피 표현 없음</td><td>피해</td></tr>
+          <tr><td>지침</td><td>별빛이 바닥나면 몸이 무거워지고 졸음이 쏟아진다.</td><td>귀가 처지고 비틀거림</td><td>체력 낮음 경고</td></tr>
+          <tr><td>쓰러짐</td><td>“별빛 탈진”. 죽지 않고 깊이 잠든다. 계약 성좌가 마지막 한 줌의 별빛을 지켜 준다.</td><td>작은 별 모양으로 둥실 떠오름</td><td>사망 대신 탈진</td></tr>
+          <tr><td>깨어남</td><td>가까운 여관·성소에서 따뜻한 차와 함께 깨어난다.</td><td>이불 덮고 일어나는 연출</td><td>부활 = 귀환 후 깨어남</td></tr>
+          <tr><td>회복</td><td>별빛이 고인 음식을 먹거나, 잠을 자거나, 힐러의 울림을 듣는다.</td><td>먹는 모션, 종소리</td><td>회복 아이템 = 음식</td></tr>
+          <tr><td>병</td><td>탁한 별빛을 마시면 “별멀미”를 앓는다. 열이 나고 털 색이 잿빛이 된다.</td><td>털 색 변화</td><td>상태 이상(약화·중독 대체)</td></tr>
+        </table></div>
+        <div class="callout note">헌터가 직접 죽는 일은 없다. 그래서 “목숨을 건다”는 표현 대신 “별빛을 다 쓴다”는 표현을 쓴다. 장비 강화 실패도 장비가 부서지지 않고 <b>먹인 별가루가 흩어질 뿐</b>이다.</div>
+      </section>
+
+      <section class="sec" id="l-4"><h2><span class="no">04</span>음식</h2>
+        <h3>무엇을 먹나</h3>
+        <div class="grid g2">
+          <div class="card"><h4>✔ 먹는 것</h4><ul><li>곡물·견과 — 도토리, 밤, 별보리, 잣</li><li>열매 — 산딸기, 별사과, 이슬포도</li><li>뿌리 — 감자, 당근, 무</li><li>버섯 — 야광버섯, 구름버섯</li><li>꽃 — 꽃잎, 꿀, 꽃가루</li><li>물 — 별이슬, 샘물, 수초·해초</li><li>젤리 — 슬라임이 정화되며 남기는 말랑 젤리</li></ul></div>
+          <div class="card"><h4>✘ 먹지 않는 것</h4><ul><li><b>고기와 물고기</b> — 말하는 이웃과 닮은 동물을 먹지 않는다. 별빛도 식물에 가장 많이 고이므로 굳이 먹을 이유가 없다.</li><li><b>알</b> — 새 수인(부엉이·참새)이 있는 세계라 금기.</li><li><b>탁한 별빛이 든 것</b> — 별멀미. 몬스터가 사는 곳의 열매는 정화 후 먹는다.</li></ul><p style="font-size:13.5px;color:var(--muted);margin:6px 0 0">단백질 같은 영양 개념은 없다. 이 세계의 영양은 곧 별빛이다.</p></div>
+        </div>
+        <h3>먹는 방식</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>항목</th><th>설정</th></tr>
+          <tr><td>끼니</td><td>몸이 작아 금방 배가 고프다. 하루 <b>네 끼</b> — 아침, 점심, 새참(오후 간식), 저녁. 새참이 가장 중요한 문화</td></tr>
+          <tr><td>조리</td><td>불은 별핵 화덕으로 피운다. 굽기·찌기·조리기·말리기. 튀김은 거의 없음(기름이 귀함)</td></tr>
+          <tr><td>보존</td><td>별가루를 살짝 뿌리면 음식이 오래 간다. 그래서 별가루 단지가 집집마다 있다</td></tr>
+          <tr><td>식사 예절</td><td>먹기 전에 “잘 먹을게, 별빛”이라고 말한다. 먹다 남긴 음식은 펫에게</td></tr>
+          <tr><td>헌터의 밥</td><td>사냥 나갈 땐 여관 주인 포근이 싸 주는 <b>도시락</b>(도토리 경단 + 별이슬 물통)</td></tr>
+          <tr><td>마시는 것</td><td>차 문화. 꽃차, 별이슬 차, 도토리 볶은 차. 술은 없고 대신 “꿀술”이라 부르는 발효 꿀물(어른용, 졸음이 옴)</td></tr>
+        </table></div>
+        <h3>지역 음식</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>지역</th><th>대표 음식</th><th>특징</th></tr>
+          <tr><td>1. 별이끼 초원</td><td>도토리빵, 별이끼 수프, 꿀별 꿀</td><td>소박한 집밥. 모든 헌터의 “고향 맛”</td></tr>
+          <tr><td>2. 바람나무 숲</td><td>도토리 경단, 야광버섯 꼬치, 잣죽</td><td>도토리 시장 길거리 음식. 들고 다니며 먹는다</td></tr>
+          <tr><td>3. 유리호수</td><td>얼음꽃 빙수, 수초 비빔밥, 이슬포도</td><td>차갑고 맑은 맛. 물방울 마을 수상 장터</td></tr>
+          <tr><td>4. 천둥협곡</td><td>온천 찐감자, 화산석 군밤</td><td>불씨 온천의 열로 찐다. 맵고 뜨겁다</td></tr>
+          <tr><td>5. 잠든 성도</td><td>300년 된 별사탕, 멈춘 시간의 과자</td><td>시간이 멈춘 덕에 상하지 않은 옛 과자. 맛이 오래된 동화 같다</td></tr>
+          <tr><td>6. 별의 눈</td><td>별잔해 구이(결사의 음식)</td><td>별지기 결사가 먹는 거친 음식. 별빛이 진해 힘이 나지만 맛이 쓰다</td></tr>
+          <tr><td>7. 천궁 회랑</td><td>구름 솜사탕, 별핵 사탕</td><td>하늘섬의 귀한 음식. 축제 때만</td></tr>
+        </table></div>
+      </section>
+
+      <section class="sec" id="l-5"><h2><span class="no">05</span>음식 목록 (회복 · 버프 아이템)</h2>
+        <p>“포션”이라는 말 대신 음식 이름을 그대로 아이템 이름으로 쓴다. 효과 수치는 가안.</p>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>음식</th><th>분류</th><th>효과(가안)</th><th>재료</th><th>파는 곳</th></tr>
+          <tr><td>🍞 도토리빵</td><td>체력 회복 · 하급</td><td class="num">체력 20% 회복</td><td>도토리 가루, 별가루 한 꼬집</td><td>도토의 잡화점</td></tr>
+          <tr><td>🍡 별꿀 경단</td><td>체력 회복 · 중급</td><td class="num">체력 45% 회복</td><td>도토리 경단 + 꿀별 꿀</td><td>잡화점 · 숲 시장</td></tr>
+          <tr><td>🍬 별핵 사탕</td><td>체력 회복 · 상급</td><td class="num">체력 100% 회복</td><td>별핵 조각을 녹인 사탕</td><td>천궁 · 보스 드롭</td></tr>
+          <tr><td>🍵 별이슬 차</td><td>별빛(마나) 회복</td><td class="num">별빛 30% 회복</td><td>새벽 이슬 + 꽃잎</td><td>여관</td></tr>
+          <tr><td>🧴 꽃잎 별이슬 시럽</td><td>파티 회복</td><td class="num">파티 전원 체력 25%</td><td>꽃잎을 별이슬에 졸임</td><td>힐러 전용 제작 (네무의 “치유의 포션”)</td></tr>
+          <tr><td>🍮 말랑 젤리</td><td>지속 회복</td><td class="num">10초간 체력 3%/초</td><td>정화된 슬라임 젤리</td><td>별먼지 슬라임 드롭</td></tr>
+          <tr><td>🥣 별이끼 수프</td><td>버프 · 방어</td><td class="num">30분 방어력 +10%</td><td>별이끼, 감자</td><td>여관 식사</td></tr>
+          <tr><td>🍢 야광버섯 꼬치</td><td>버프 · 시야</td><td class="num">30분 명중 +8%, 밤 시야</td><td>야광버섯</td><td>숲 시장</td></tr>
+          <tr><td>🍧 얼음꽃 빙수</td><td>버프 · 저항</td><td class="num">30분 불 피해 -15%</td><td>호수 얼음, 이슬포도</td><td>물방울 마을</td></tr>
+          <tr><td>🥔 온천 찐감자</td><td>버프 · 저항</td><td class="num">30분 얼음 피해 -15%</td><td>감자, 온천 열</td><td>협곡 전초기지</td></tr>
+          <tr><td>🌰 화산석 군밤</td><td>버프 · 공격</td><td class="num">30분 공격력 +10%</td><td>밤, 화산석</td><td>협곡 전초기지</td></tr>
+          <tr><td>🍯 꿀술</td><td>버프 · 오프라인</td><td class="num">오프라인 효율 +10% (먹고 잠듦)</td><td>발효 꿀물</td><td>여관(어른만)</td></tr>
+          <tr><td>🍙 헌터 도시락</td><td>자동 사용 세트</td><td class="num">자동사냥 중 체력 낮으면 자동 섭취</td><td>경단 + 물통</td><td>포근의 여관</td></tr>
+          <tr><td>🍭 300년 별사탕</td><td>희귀 · 경험치</td><td class="num">1시간 경험치 +50%</td><td>성도의 멈춘 과자</td><td>잠든 성도 상자</td></tr>
+          <tr><td>🌾 별보리 죽</td><td>탈진 회복</td><td class="num">깨어날 때 체력 50%로 시작</td><td>별보리</td><td>여관 (탈진 후 자동)</td></tr>
+          <tr><td>✨ 별가루 간식</td><td>펫 먹이</td><td class="num">펫 경험치</td><td>별가루 뭉친 것</td><td>어디서나</td></tr>
+        </table></div>
+        <div class="callout note">요리 시스템을 넣는다면: 재료(사냥 드롭·채집) + 지역 화덕 → 음식. 지역 음식은 그 지역 재료로만 만들 수 있게 하면 지역을 다시 찾을 이유가 생긴다.</div>
+      </section>
+
+      <section class="sec" id="l-6"><h2><span class="no">06</span>옷과 소재</h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>소재</th><th>무엇인가</th><th>쓰는 곳</th></tr>
+          <tr><td>별솜</td><td>별가루를 머금은 목화. 은은하게 빛나고 따뜻하다</td><td>후드, 케이프, 로브 — 가장 흔한 옷감</td></tr>
+          <tr><td>민들레 솜털</td><td>민들레 양이 정화될 때 털갈이한 솜털</td><td>속옷, 이불, 베개</td></tr>
+          <tr><td>털갈이 펠트</td><td>몬스터가 정화되며 떨군 털을 뭉친 천</td><td>모자, 장갑, 신발 깔창</td></tr>
+          <tr><td>껍질가죽</td><td>바람나무 껍질을 무두질한 질긴 천. <b>동물 가죽이 아니다</b></td><td>벨트, 하네스, 화살통, 가방 (원화의 “가죽” 부분)</td></tr>
+          <tr><td>나무</td><td>바람나무 가지, 도토리 깍지</td><td>활, 지팡이 자루, 방패 틀, 단추</td></tr>
+          <tr><td>별철</td><td>별 조각을 녹여 만든 은빛 금속. 가볍지만 귀하다</td><td>검날, 방패 테두리, 버클</td></tr>
+          <tr><td>별금</td><td>별핵 가루를 섞은 금빛 금속</td><td>별 장식, 참(charm), 장신구 — 원화의 금색 장식 전부</td></tr>
+          <tr><td>꽃물</td><td>꽃잎을 우린 염료</td><td>붉은 후드(산딸기꽃), 보라 로브(그믐꽃), 초록 튜닉(이끼)</td></tr>
+        </table></div>
+        <div class="grid g2">
+          <div class="card"><h4>옷차림 규칙</h4><ul><li>헌터는 <b>후드·케이프</b>가 기본 — 밤에 내리는 별가루를 받아 몸에 모으기 위해서.</li><li>귀 구멍이 있는 모자가 일반적. 귀를 가리면 예의가 아니다.</li><li>꼬리는 옷 밖으로 내놓는다(꼬리 구멍).</li><li>철 갑옷은 무겁고 별빛을 막아서 입지 않는다.</li></ul></div>
+          <div class="card"><h4>옷의 의미</h4><ul><li>색은 계약 성좌를 따르는 경우가 많다(루체 → 붉은색·금색, 녹스 → 남색).</li><li>금색 별 장식은 “성좌와 계약한 헌터”라는 표시.</li><li>변신(성현)은 옷 위에 별빛으로 덧입는 것 — 그래서 모든 헌터가 같은 변신을 입을 수 있다.</li></ul></div>
+        </div>
+      </section>
+
+      <section class="sec" id="l-7"><h2><span class="no">07</span>집과 마을</h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>지역</th><th>집</th><th>재료</th><th>특징</th></tr>
+          <tr><td>초원 · 별방울 마을</td><td>둥근 지붕 오두막</td><td>나무, 이끼 지붕, 천막</td><td>지붕마다 별가루를 모으는 깔때기 모양 굴뚝</td></tr>
+          <tr><td>바람나무 숲</td><td>나무 위 집</td><td>가지, 나뭇잎, 껍질가죽</td><td>흔들다리로 연결. 집이 나무와 함께 자란다</td></tr>
+          <tr><td>유리호수 · 물방울 마을</td><td>수상 가옥</td><td>연잎 기둥, 얼음 유리 창</td><td>얼음 아래 정원이 보이는 바닥 창</td></tr>
+          <tr><td>천둥협곡</td><td>바위 굴 전초기지</td><td>돌, 별철</td><td>피뢰침이 달린 둥근 문</td></tr>
+          <tr><td>잠든 성도</td><td>하얀 돌 저택(빈집)</td><td>흰 돌, 스테인드글라스</td><td>사람 크기가 아니라 수인보다 조금 큰 옛 주민 크기</td></tr>
+        </table></div>
+        <p>집 안에는 공통으로 <b>별핵 화덕</b>(난방·조리), <b>별가루 단지</b>(보존·저금), <b>등불</b>, <b>작은 성좌 제단</b>이 있다. 하우징 시스템을 만든다면 이 네 가지가 기본 가구.</p>
+      </section>
+
+      <section class="sec" id="l-8"><h2><span class="no">08</span>돈과 거래</h2>
+        <div class="grid g2">
+          <div class="card"><h4>별가루가 곧 돈</h4><p>별가루는 등불을 켜고, 음식을 보존하고, 장비를 강화하는 생활 에너지라 누구나 원한다. 그래서 그대로 화폐가 되었다. 작은 유리병에 담아 “한 병, 두 병”으로 센다.</p><ul><li>잔돈: 별가루 한 꼬집</li><li>보통: 별가루 한 병(=100꼬집)</li><li>큰 거래: 별빛 결정(=100병)</li></ul></div>
+          <div class="card"><h4>거래 문화</h4><ul><li>물물교환이 아직 흔하다 — 도토리 시장에선 “버섯 세 개에 꽃잎 한 줌”.</li><li>도토(다람쥐)는 뭐든 사 준다 → 자동 판매의 세계관 근거.</li><li>장터 게시판에 물건을 걸어 두면 다른 헌터가 사 간다 → 거래소.</li><li>세금은 없다. 대신 마을 축제 때 별가루를 조금씩 모은다(별자리 기부).</li></ul></div>
+        </div>
+      </section>
+
+      <section class="sec" id="l-9"><h2><span class="no">09</span>하루 · 계절 · 축제</h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>때</th><th>세계관</th><th>게임</th></tr>
+          <tr><td>낮</td><td>별빛이 약하고 햇빛만 있다. 수인들이 일하고 채집하는 시간</td><td>게임 내 하루 = 현실 2시간(가안). 낮 80분</td></tr>
+          <tr><td>밤</td><td>하늘에서 별가루가 내린다. 몬스터가 활발해지고 일부 몬스터는 밤에만 나온다</td><td>밤 40분. 별가루 획득 +10%, 야행성 몬스터</td></tr>
+          <tr><td>별비</td><td>가끔 별가루가 소나기처럼 쏟아지는 밤. 모두 바구니를 들고 나온다</td><td>필드 이벤트 · 국왕의 “별비 선포”</td></tr>
+          <tr><td>한 하늘</td><td>하늘의 별자리가 한 바퀴 자리를 바꾸는 주기. 약 두 달</td><td>= 시즌 1회. 시즌 종료 = “하늘이 바뀌는 밤”</td></tr>
+        </table></div>
+        <h3>계절과 축제</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>계절</th><th>이름</th><th>축제</th><th>하는 일</th></tr>
+          <tr><td>봄</td><td>싹별철</td><td>🌸 꽃잎 계약제</td><td>새 헌터들이 성좌와 첫 계약을 맺는 날. 신전 앞에 꽃잎을 뿌린다</td></tr>
+          <tr><td>여름</td><td>반딧철</td><td>🏮 등불 축제 (루체의 날)</td><td>집집마다 등불을 내걸고 밤새 이야기. 등불자리가 가장 밝은 밤</td></tr>
+          <tr><td>가을</td><td>도토리철</td><td>🌰 도토리 수확제</td><td>한 해 먹을 도토리를 모으는 날. 도토리빵 굽기 대회</td></tr>
+          <tr><td>겨울</td><td>서리철</td><td>🔔 첫눈 종 축제 (린의 날)</td><td>첫눈 오는 밤 모든 종을 울린다. 떠난 이들에게 안부를 전하는 날</td></tr>
+          <tr><td>시즌 끝</td><td>—</td><td>✨ 하늘 바뀌는 밤</td><td>천궁에 새 별자리가 새겨지고, 모두 하늘을 올려다본다</td></tr>
+        </table></div>
+      </section>
+
+      <section class="sec" id="l-10"><h2><span class="no">10</span>사회와 직업</h2>
+        <div class="grid g2">
+          <div class="card"><h4>다스림</h4><ul><li><b>나라·왕국은 없다.</b> 마을마다 촌장이 있고, 큰일은 광장 모임에서 정한다.</li><li>“국왕”은 진짜 왕이 아니라 한 하늘(시즌) 동안 천궁에 앉는 <b>명예의 자리</b>. 나눠 주는 역할만 한다.</li><li>법보다 약속이 중요하다. 약속을 어기면 성좌의 별이 흐려진다고 믿는다.</li></ul></div>
+          <div class="card"><h4>성좌 신전</h4><ul><li>계약, 전직, 변신을 맡는 곳. 종교이자 헌터 협회.</li><li>사제(엘린)는 헌터 명부를 관리한다 — “헌터 등록” 시스템의 근거.</li><li>모든 성좌를 함께 모신다. 특정 성좌만 섬기는 건 별자리(길드)의 몫.</li></ul></div>
+        </div>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>직업</th><th>하는 일</th><th>게임 연결</th></tr>
+          <tr><td>헌터</td><td>몬스터를 정화하고 별빛을 모은다</td><td>플레이어</td></tr>
+          <tr><td>별 줍는 이</td><td>별비가 내린 밤 별가루를 모은다(아이들·노인 부업)</td><td>채집</td></tr>
+          <tr><td>별 건지는 이</td><td>호수·강에서 떨어진 별 조각을 그물로 건진다</td><td>낚시 대체 콘텐츠</td></tr>
+          <tr><td>대장장이</td><td>별철을 두드려 장비를 만든다(투박)</td><td>강화·제작</td></tr>
+          <tr><td>상인</td><td>물건을 모으고 판다(도토)</td><td>상점·거래소</td></tr>
+          <tr><td>여관지기</td><td>재워 주고 먹여 주고, 헌터가 없는 동안 장부를 적는다(포근)</td><td>오프라인 보상</td></tr>
+          <tr><td>배달부</td><td>마을 사이 편지와 소포(삐요)</td><td>우편</td></tr>
+          <tr><td>기록관</td><td>옛이야기와 별의 위치를 적는다(오울라)</td><td>도감·업적</td></tr>
+          <tr><td>지도쟁이</td><td>매일 바뀌는 숲길을 그린다(포코가 되고 싶어 함)</td><td>탐험·지도 해금</td></tr>
+        </table></div>
+      </section>
+
+      <section class="sec" id="l-11"><h2><span class="no">11</span>종족별 문화</h2>
+        <p>종족은 성격을 강제하지 않지만, “그 종족다운” 문화가 있다. NPC를 만들 때 출발점으로 쓴다.</p>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>종족</th><th>많이 하는 일</th><th>문화</th><th>예</th></tr>
+          <tr><td>🦊 여우</td><td>헌터, 탐험가</td><td>호기심 많고 겁이 없다. 귀 끝 색으로 가문을 구분</td><td>루미, 포코</td></tr>
+          <tr><td>🐰 토끼</td><td>치유사, 음악가</td><td>소리에 민감. 종과 노래로 대화하는 풍습</td><td>네무</td></tr>
+          <tr><td>🐱 고양이</td><td>학자, 접수원, 별 관측</td><td>밤에 깨어 있고 낮잠이 길다. 별자리에 밝다</td><td>모리, 미루</td></tr>
+          <tr><td>🐿️ 다람쥐</td><td>상인, 저장</td><td>모으는 것을 좋아함. 창고가 곧 재산</td><td>도토</td></tr>
+          <tr><td>🐹 두더지</td><td>광부, 대장장이</td><td>땅속 별 조각을 캔다. 말수가 적다</td><td>투박</td></tr>
+          <tr><td>🦉 부엉이</td><td>기록관, 촌장</td><td>오래 산다(약 300년). 옛일을 기억하는 종족</td><td>오울라</td></tr>
+          <tr><td>🦝 너구리</td><td>여관, 요리</td><td>손님을 챙기는 걸 좋아함. 요리 실력이 좋다</td><td>포근</td></tr>
+          <tr><td>🐦 참새</td><td>배달부</td><td>유일하게 날 수 있는 작은 새 수인. 소식이 빠르다</td><td>삐요</td></tr>
+          <tr><td>🦌 사슴</td><td>사제</td><td>조용하고 신앙이 깊다. 뿔에 꽃을 꽂는다</td><td>엘린</td></tr>
+          <tr><td>🐦‍⬛ 까마귀</td><td>별 관측, 떠돌이</td><td>반짝이는 것을 모으고 하늘을 오래 본다. 마을에 잘 머물지 않는다</td><td>코르</td></tr>
+        </table></div>
+        <div class="callout note">수명: 대부분의 수인은 약 80년. 부엉이만 300년 가까이 산다 — 그래서 대낙성 직후를 기억하는 사람이 오울라 할머니뿐이다.</div>
+      </section>
+
+      <section class="sec" id="l-12"><h2><span class="no">12</span>이름 짓기</h2>
+        <div class="grid g2">
+          <div class="card"><h4>수인 이름 규칙</h4><ul><li><b>두 글자, 부드러운 소리</b>: 루미, 네무, 포코, 모리, 도토, 삐요, 미루</li><li>받침은 되도록 없이. 된소리는 성격이 센 캐릭터에만(투박, 코르)</li><li>성은 없다. 같은 이름이면 마을 이름을 붙인다: “별방울의 루미”</li></ul></div>
+          <div class="card"><h4>그 밖의 이름</h4><ul><li><b>성좌</b>: 외래어 느낌 2~3글자(루체, 녹스, 시엘) + 우리말 별자리 이름(등불자리)</li><li><b>몬스터</b>: 우리말 합성어 “자연 + 동물”(이끼뿔 사슴, 번개꼬리 토끼)</li><li><b>보스</b>: 별칭 + 「외래어 이름」(고목의 심장 「올드루트」)</li><li><b>지역·음식</b>: 우리말(별이끼 초원, 도토리빵)</li></ul></div>
+        </div>
+      </section>
+
+      <section class="sec" id="l-13"><h2><span class="no">13</span>말 · 글 · 배움</h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>항목</th><th>설정</th></tr>
+          <tr><td>말</td><td>모든 수인이 같은 말을 쓴다. 지역마다 말투만 조금 다르다(호수 마을은 느릿느릿, 협곡은 짧고 크게)</td></tr>
+          <tr><td>글</td><td>공용 글자와, 성도 유적에 남은 <b>별글자</b>(점과 선으로 별자리처럼 쓰는 옛 문자). 별글자를 읽을 수 있는 건 모리와 일부 학자뿐</td></tr>
+          <tr><td>배움</td><td>학교 대신 신전 학당. 아이들은 별 이름, 계약 예절, 버섯 구분법을 배운다</td></tr>
+          <tr><td>책</td><td>꽃잎 종이에 쓴다. “이야기 책” = 스토리 다시 보기 기능</td></tr>
+          <tr><td>성좌의 말</td><td>성좌는 소리 없이 계약자의 마음에 직접 말한다. 계약자 외에는 들리지 않는다(네무만 예외)</td></tr>
+        </table></div>
+      </section>
+
+      <section class="sec" id="l-14"><h2><span class="no">14</span>기술과 도구</h2>
+        <div class="grid g2">
+          <div class="card"><h4>있는 것</h4><ul><li>별가루 등불, 별핵 화덕</li><li>물레방아, 바람개비 방앗간</li><li>흔들다리, 도르래 승강기(숲)</li><li>망원경(별 관측 — 고양이·까마귀)</li><li>별철 대장간, 베틀</li><li>별 방울 — 두 개가 짝을 이뤄 멀리서도 같이 울리는 방울(통신)</li></ul></div>
+          <div class="card"><h4>없는 것</h4><ul><li>화약, 총, 대포</li><li>증기기관, 전기 기계</li><li>바퀴 달린 큰 탈것(길이 좁고 숲이 매일 바뀜)</li><li>인쇄기 — 책은 손으로 베낀다</li></ul></div>
+        </div>
+      </section>
+
+      <section class="sec" id="l-15"><h2><span class="no">15</span>이동과 연락</h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>시스템</th><th>세계관</th></tr>
+          <tr><td>걷기 · 달리기</td><td>기본. 작아서 걸음은 빠르지만 길이 멀다</td></tr>
+          <tr><td>탈것</td><td><b>구름양</b>(둥실 떠서 이동) · 들쥐 수레 · 호수의 연잎 배</td></tr>
+          <tr><td>순간이동</td><td><b>별빛 다리</b> — 성소와 성소를 잇는 빛의 길. 한 번 가 본 성소로만 이어진다</td></tr>
+          <tr><td>마을 귀환</td><td><b>귀환 깃털</b> — 삐요가 파는 깃털. 꽂으면 바람이 마을로 데려다 준다</td></tr>
+          <tr><td>우편</td><td>참새 배달부. 별자리 보상·시즌 보상도 우편으로 온다</td></tr>
+          <tr><td>채팅 · 귓속말</td><td>별 방울. 별자리원은 같은 별 방울을 나눠 가진다(별자리 채팅)</td></tr>
+          <tr><td>친구</td><td>“실을 잇는다” — 실타래자리 아라의 풍습. 친구끼리 손목에 별빛 실</td></tr>
+        </table></div>
+      </section>
+
+      <section class="sec" id="l-16"><h2><span class="no">16</span>동물 · 몬스터 생태</h2>
+        <div class="grid g3">
+          <div class="card"><h4>동물</h4><p>말을 하지 않는 보통 동물도 있다(토끼, 사슴, 물고기, 새). 수인의 이웃이고, 먹지 않으며, 수인보다 큰 경우가 많다.</p></div>
+          <div class="card"><h4>몬스터</h4><p>탁한 별빛을 삼켜 변한 동물·식물·물건. 본래 성격이 과장된다(겁 많은 새 → 겁쟁이 엘리트).</p></div>
+          <div class="card"><h4>정화</h4><p>헌터가 몬스터를 쓰러뜨리면 탁한 별빛이 빠져나가 <b>원래 모습으로 돌아가 도망간다</b>. 남는 건 별가루와 떨군 것들.</p></div>
+        </div>
+        <div class="callout note"><b>드롭 규칙</b> — 드롭 아이템은 몬스터가 “흘린 것”이다: 털갈이 털, 빠진 뿔·엄니·깃털, 벗겨진 비늘, 삼켰던 물건, 별가루. 가죽·고기 같은 “죽여서 얻는 것”은 드롭하지 않는다. 그래서 도감의 드롭도 <b>털뭉치·깃털·조각</b> 위주로 짓는다.</div>
+        <p>보스는 지역 이상현상의 “원인”이다. 보스를 정화하면 숲의 성장이 멈추고, 호수가 녹고, 번개가 잦아든다 — 지역이 눈에 보이게 바뀐다.</p>
+      </section>
+
+      <section class="sec" id="l-17"><h2><span class="no">17</span>삶과 죽음 · 믿음</h2>
+        <div class="grid g2">
+          <div class="card"><h4>나이 들어 떠남</h4><p>수인이 생을 다하면 몸이 작은 빛이 되어 하늘로 올라간다. “별이 되었다”고 말한다. 무덤 대신 마을 언덕에 그 수인의 등불을 하나 둔다.</p></div>
+          <div class="card"><h4>믿음</h4><p>모두가 성좌를 믿지만, 맹신은 아니다. “성좌님도 가끔 틀린다”는 속담이 있을 정도. 이 가벼운 믿음이 5장 반전(성좌가 진실을 숨김)을 받아들일 바탕이 된다.</p></div>
+          <div class="card"><h4>속담</h4><ul><li>“별은 떨어져도 빛은 남는다.” — 위로할 때</li><li>“도토리 하나도 별빛.” — 아껴 쓰라는 말</li><li>“귀를 접으면 별도 안 들린다.” — 남의 말을 들으라는 말</li></ul></div>
+          <div class="card"><h4>금기</h4><ul><li>탁한 별빛을 일부러 만지기</li><li>남의 등불을 끄기</li><li>약속을 하고 별에 맹세하지 않기(맹세는 꼭 지켜야 해서 함부로 안 함)</li></ul></div>
+        </div>
+      </section>
+
+      <section class="sec" id="l-18"><h2><span class="no">18</span>놀이와 문화</h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>놀이</th><th>설명</th><th>미니게임·콘텐츠 후보</th></tr>
+          <tr><td>별 잡기</td><td>별비 오는 밤 바구니로 별가루 받기</td><td>이벤트 미니게임</td></tr>
+          <tr><td>도토리 굴리기</td><td>언덕에서 도토리 굴려 멀리 보내기</td><td>축제 랭킹</td></tr>
+          <tr><td>별자리 맞히기</td><td>밤하늘 보고 성좌 이름 대기 — 고양이들이 최강</td><td>퀴즈 · 도감 보상</td></tr>
+          <tr><td>종 합주</td><td>토끼 마을 전통. 여럿이 종을 울려 노래</td><td>네무 이벤트 · 리듬 게임</td></tr>
+          <tr><td>그림자 술래잡기</td><td>성도 아이들 놀이(그림자 인형의 유래)</td><td>성도 숨은 이벤트</td></tr>
+          <tr><td>지도 그리기 대회</td><td>숲의 바뀐 길을 누가 먼저 그리나</td><td>탐험 이벤트</td></tr>
+        </table></div>
+      </section>
+
+      <section class="sec" id="l-19"><h2><span class="no">19</span>시스템 → 세계관 답 (빠른 찾기)</h2>
+        <p>시스템 기획자가 가장 먼저 보는 표. 새 시스템을 만들면 여기에 한 줄 추가한다.</p>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>시스템</th><th>에테르에서는</th><th>담당 NPC · 장소</th></tr>
+          <tr><td>체력 포션</td><td>도토리빵 · 별꿀 경단 · 별핵 사탕</td><td>도토의 잡화점</td></tr>
+          <tr><td>마나 포션</td><td>별이슬 차</td><td>포근의 여관</td></tr>
+          <tr><td>버프 물약</td><td>지역 요리(수프·꼬치·빙수·군밤)</td><td>여관 · 지역 시장</td></tr>
+          <tr><td>해독 · 정화</td><td>박하 꽃차 — 별멀미를 가라앉힘</td><td>성좌 신전</td></tr>
+          <tr><td>부활</td><td>별빛 탈진 → 여관에서 깨어남, 별보리 죽</td><td>포근의 여관</td></tr>
+          <tr><td>귀환 주문서</td><td>귀환 깃털</td><td>삐요</td></tr>
+          <tr><td>순간이동</td><td>별빛 다리(가 본 성소끼리)</td><td>각 지역 성소</td></tr>
+          <tr><td>탈것</td><td>구름양, 연잎 배</td><td>펫·변신 연계</td></tr>
+          <tr><td>가방 확장</td><td>도토의 큰 주머니 / 도토롱 펫</td><td>도토</td></tr>
+          <tr><td>창고</td><td>집의 별가루 단지 + 도토의 뒤창고</td><td>도토</td></tr>
+          <tr><td>장비 강화</td><td>별가루를 먹여 별빛 길을 넓힘. 실패해도 장비는 안 깨짐</td><td>투박의 대장간</td></tr>
+          <tr><td>장비 분해</td><td>별철·별금을 녹여 되돌림</td><td>투박</td></tr>
+          <tr><td>제작 · 요리</td><td>지역 화덕 + 드롭 재료</td><td>여관 화덕 · 대장간</td></tr>
+          <tr><td>채집</td><td>별 줍기(밤), 버섯·꽃 따기</td><td>필드</td></tr>
+          <tr><td>낚시</td><td>별 건지기 — 물고기 대신 떨어진 별 조각</td><td>유리호수</td></tr>
+          <tr><td>상점 화폐</td><td>별가루(병 단위)</td><td>—</td></tr>
+          <tr><td>거래소 · 경매장</td><td>장터 게시판</td><td>도토리 시장</td></tr>
+          <tr><td>우편함</td><td>참새 우편</td><td>삐요</td></tr>
+          <tr><td>채팅 · 길드 채팅</td><td>별 방울</td><td>—</td></tr>
+          <tr><td>친구 · 파티</td><td>실 잇기 · 탐사대</td><td>아라(성좌)</td></tr>
+          <tr><td>길드</td><td>별자리</td><td>미루의 별자리 회관</td></tr>
+          <tr><td>랭킹</td><td>미루의 순위판, 천궁 벽의 이름</td><td>별자리 회관</td></tr>
+          <tr><td>출석 체크</td><td>아침 이슬 받기 — 매일 아침 창가의 이슬 병</td><td>집</td></tr>
+          <tr><td>오프라인 보상</td><td>여관 장부 — 자는 동안 탐사대가 번 별가루</td><td>포근</td></tr>
+          <tr><td>경험치 · 레벨</td><td>별빛 그릇이 커짐</td><td>—</td></tr>
+          <tr><td>칭호 · 업적</td><td>기록관의 장부에 이름이 적힘</td><td>오울라</td></tr>
+          <tr><td>도감</td><td>오울라 할머니의 관찰 일지</td><td>오울라</td></tr>
+          <tr><td>하우징</td><td>나무 위 집 / 오두막 — 화덕·단지·등불·제단 기본</td><td>지역별</td></tr>
+          <tr><td>날씨</td><td>맑음 · 비 · 별비 · 안개 · 눈 (지역별)</td><td>—</td></tr>
+          <tr><td>시즌 · 환생</td><td>한 하늘이 바뀌는 밤 · 성흔</td><td>천궁</td></tr>
+          <tr><td>뽑기 · 상자</td><td>별똥별 상자 — 떨어진 별 자리에서 주운 꾸러미</td><td>필드 이벤트</td></tr>
+          <tr><td>외형 · 염색</td><td>꽃물 염색</td><td>도토 · 축제 상점</td></tr>
+          <tr><td>결혼 · 인연 (선택)</td><td>“같은 별 보기” — 둘이 같은 별에 이름을 붙임</td><td>성좌 신전</td></tr>
+        </table></div>
+      </section>
+
+      <section class="sec" id="l-20"><h2><span class="no">20</span>하지 않는 것</h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>하지 않음</th><th>대신</th><th>이유</th></tr>
+          <tr><td>피, 상처 묘사</td><td>새어 나가는 별빛 입자</td><td>법칙 ③</td></tr>
+          <tr><td>죽음, 시체</td><td>별빛 탈진 · 정화되어 도망감</td><td>법칙 ③</td></tr>
+          <tr><td>고기 요리, 가죽 드롭</td><td>식물성 음식, 털갈이 털·껍질가죽</td><td>이웃 동물을 먹지 않음</td></tr>
+          <tr><td>인간</td><td>수인·환수만</td><td>세계관 원안</td></tr>
+          <tr><td>총·화약·기계</td><td>별빛 도구</td><td>법칙 ①</td></tr>
+          <tr><td>철 갑옷, 거대 무기</td><td>천·가죽·나무, 작은 무기</td><td>아트 디렉션</td></tr>
+          <tr><td>“포션”, “골드”, “경험치” 같은 일반 용어</td><td>도토리빵, 별가루, 별빛 그릇</td><td>세계관 언어 통일 (UI 툴팁엔 일반 용어 병기 가능)</td></tr>
+        </table></div>
       </section>
     </div>
   </div>

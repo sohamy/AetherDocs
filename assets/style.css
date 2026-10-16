@@ -336,3 +336,9 @@ footer { max-width: 1200px; margin: 0 auto; padding: 24px 16px 40px; color: var(
 .dex-art .no, .dex-art .tag { z-index: 1; }
 .modal-art.has-img { padding: 0; overflow: hidden; }
 .modal-art.has-img img { width: 100%; height: 100%; max-height: none; object-fit: cover; padding: 0; cursor: zoom-in; }
+
+/* 키 아트 */
+.keyart { margin: -8px 0 28px; }
+.keyart button { display: block; width: 100%; padding: 0; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; cursor: zoom-in; background: #1b1d40; box-shadow: var(--shadow); }
+.keyart img { width: 100%; height: auto; }
+.keyart figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; text-align: center; }
