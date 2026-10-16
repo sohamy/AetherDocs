@@ -98,7 +98,7 @@
     ['lore', '생활 설정집', '음식, 옷, 집, 돈, 축제, 종족 문화, 시스템 → 세계관 답'],
     ['codex', '세계 백과', '역사, 지역 생활, 제도, 경제 설계, 결사, 자연, FAQ'],
     ['story', '스토리', '메인 미스터리, 장 구성, 반전, 네 주인공 관계'],
-    ['growth', '성장 · 인크리멘탈', '5단계 해방, 재화, 공식, 시즌 초월'],
+    ['growth', '성장 · 인크리멘탈', '5단계 해방, 재화, 공식, 초월'],
     ['items', '아이템 설계', '회복 음식, 배부름, 전용 재화 총람, 장비 슬롯·등급·강화, 재료 사전'],
     ['combat', '전투 · 직업', '자동사냥, 헌터와 파티, 4직업 8속성, 상성, 엘리트 AI'],
     ['guild', '별무리 · PvP', '길드, 영지, 성좌 전쟁, 천궁과 국왕'],
@@ -332,7 +332,7 @@
         <div class="k" style="color:var(--muted);font-size:12px">${label} No.${String(i + 1).padStart(3, '0')}</div>
         <h2>${x.locked ? '???' : esc(x.name)}</h2>
         <div class="row">${gradeBadge(x.grade)}${elBadge(x.element)}${x.added ? '<span class="badge-add">보완</span>' : ''}</div>
-        <p>${x.locked ? '아직 밝혀지지 않았다. 시즌 스토리와 함께 공개된다.' : esc(x.desc)}</p>
+        <p>${x.locked ? '아직 밝혀지지 않았다. 종장 스토리와 함께 공개된다.' : esc(x.desc)}</p>
         <dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>
         ${x.gallery ? `<h4 style="margin:16px 0 8px">원화</h4><div class="mini-gallery">${x.gallery.map(([src, cap]) =>
           `<figure style="margin:0"><img src="${src}" alt="${esc(x.name)} ${cap}" data-zoom="${src}" data-cap="${esc(x.name)} · ${cap}" loading="lazy"><figcaption style="font-size:12px;color:var(--muted);margin-top:4px">${cap}</figcaption></figure>`).join('')}</div>` : ''}
