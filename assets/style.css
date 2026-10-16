@@ -345,3 +345,18 @@ footer { max-width: 1200px; margin: 0 auto; padding: 24px 16px 40px; color: var(
 
 .callout.design { border-color: var(--added); }
 .callout.design::before { content: '기획 포인트'; display: block; font-size: 11.5px; letter-spacing: .08em; color: var(--added); font-weight: 700; margin-bottom: 2px; }
+
+/* ── 탭이 많아져도 잘리지 않게 ───────────── */
+.tabs { flex-wrap: wrap; row-gap: 4px; padding: 8px 12px 10px; overflow: visible; }
+.tab-group { flex-wrap: wrap; }
+.tab { border-radius: 8px; padding: 6px 11px; }
+.tab[aria-selected="true"] { box-shadow: 0 1px 0 rgba(0,0,0,.08); }
+.toc { top: calc(var(--head-h, 112px) + 12px); max-height: calc(100vh - var(--head-h, 112px) - 28px); overflow-y: auto; padding-right: 6px; scrollbar-width: thin; }
+.sec { scroll-margin-top: calc(var(--head-h, 112px) + 12px); }
+.region-detail { top: calc(var(--head-h, 112px) + 12px); }
+@media (max-width: 720px) {
+  .tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 22px), transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 22px), transparent 100%); }
+  .tab-group { flex-wrap: nowrap; }
+}

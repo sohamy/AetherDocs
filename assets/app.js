@@ -37,6 +37,9 @@
     if (location.hash === '#' + t.dataset.tab) activate(t.dataset.tab); else location.hash = t.dataset.tab;
   }));
   window.addEventListener('hashchange', route);
+  // 상단 바 높이(탭 줄 수에 따라 바뀜)를 목차·스크롤 위치 계산에 쓴다
+  const setHeadH = () => document.documentElement.style.setProperty('--head-h', $('.topbar').offsetHeight + 'px');
+  setHeadH(); addEventListener('resize', setHeadH);
 
   /* ── 테마 ─────────────────────────────── */
   const themeBtn = $('#themeBtn');
