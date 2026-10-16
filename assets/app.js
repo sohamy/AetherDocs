@@ -100,8 +100,8 @@
     ['story', '스토리', '메인 미스터리, 장 구성, 반전, 네 주인공 관계'],
     ['growth', '성장 · 인크리멘탈', '5단계 해방, 재화, 공식, 시즌 초월'],
     ['items', '아이템 설계', '회복 음식, 배부름, 전용 재화 총람, 장비 슬롯·등급·강화, 재료 사전'],
-    ['combat', '전투 · 직업', '자동사냥, 탐사대, 4직업 8속성, 상성, 엘리트 AI'],
-    ['guild', '별자리 · PvP', '길드, 영지, 성좌 전쟁, 천궁과 국왕'],
+    ['combat', '전투 · 직업', '자동사냥, 헌터와 파티, 4직업 8속성, 상성, 엘리트 AI'],
+    ['guild', '별무리 · PvP', '길드, 영지, 성좌 전쟁, 천궁과 국왕'],
     ['map', '월드맵', '7개 지역, 마을, 지역 제작 기준'],
     ['chars', '캐릭터 도감', '탐사대 4인과 주요 NPC'],
     ['stars', '성좌 도감', '큰 성좌 10 + 사라진 일곱째 + 아스트라(빈자리)'],
@@ -117,17 +117,17 @@
   /* ── 전투: 직업 표 · 전직 · 상성 ─────────── */
   const CLASSES = [
     { cls: '검사', hero: '루미', els: [['fire', '공격적 강화 — 연속 베기, 화상'], ['light', '방어 · 성스러운 힘 — 보호막, 도발']] },
-    { cls: '궁수', hero: '포코', els: [['earth', '안정적이고 강한 한 발 — 관통, 넉백'], ['wind', '빠른 연사와 이동 — 다중 사격, 회피']] },
+    { cls: '궁수', hero: '포코', els: [['wind', '빠른 연사와 이동 — 다중 사격, 회피'], ['thunder', '번개 화살 — 관통하며 튕기는 연쇄, 감전']] },
     { cls: '힐러', hero: '네무', els: [['water', '회복 — 지속 치유, 정화'], ['ice', '보호막 / 제어 — 둔화, 빙결']] },
-    { cls: '마법사', hero: '모리', els: [['thunder', '폭발적인 공격 — 범위, 연쇄'], ['dark', '저주와 지속 피해 — 약화, 흡수']] },
+    { cls: '마법사', hero: '모리', els: [['dark', '저주와 지속 피해 — 약화, 흡수'], ['earth', '대지와 무게 — 중력 장판, 석화, 범위 둔화']] },
   ];
-  $('#classTable').innerHTML = `<tr><th>직업</th><th>대표</th><th>속성 A</th><th>속성 B</th></tr>` + CLASSES.map(c =>
+  $('#classTable').innerHTML = `<tr><th>직업</th><th>주인공</th><th>속성 A</th><th>속성 B</th></tr>` + CLASSES.map(c =>
     `<tr><td><b>${c.cls}</b></td><td>${c.hero}</td>${c.els.map(([e, d]) => `<td>${elBadge(e)}<br><span style="font-size:13px">${d}</span></td>`).join('')}</tr>`).join('');
   const ADV = [
     ['0차 · 견습', '시작', ['견습 검사', '견습 궁수', '견습 치유사', '견습 마법사']],
     ['1차 · 직업', 'Lv 40 · 1장', ['검사', '궁수', '힐러', '마법사']],
-    ['2차 · 속성 선택', 'Lv 60 · 2장 · 공명 4', ['화염검사 / 성광기사', '대지사수 / 바람사수', '샘물사제 / 서리사제', '뇌전술사 / 그믐술사']],
-    ['3차 · 속성 각성', 'Lv 100 · 4장 · 공명 7', ['홍련검성 / 여명수호자', '거목사수 / 질풍사수', '생명의 샘 / 빙화 수호자', '천뢰마도 / 칠흑마도']],
+    ['2차 · 속성 선택', 'Lv 60 · 2장 · 공명 4', ['화염검사 / 성광기사', '바람사수 / 뇌명사수', '샘물사제 / 서리사제', '그믐술사 / 대지술사']],
+    ['3차 · 속성 각성', 'Lv 100 · 4장 · 공명 7', ['홍련검성 / 여명수호자', '질풍사수 / 천둥사수', '생명의 샘 / 빙화 수호자', '칠흑마도 / 거암마도']],
     ['4차 · 성좌 강림', '5장 · 공명 9', ['칭호 「(계약 성좌)의 검」', '「…의 화살」', '「…의 종」', '「…의 별」']],
   ];
   $('#advTable').innerHTML = `<tr><th>단계</th><th>조건</th><th>검사</th><th>궁수</th><th>힐러</th><th>마법사</th></tr>` +
@@ -135,11 +135,11 @@
 
   (function ring() {
     const order = ['water', 'fire', 'ice', 'wind', 'earth', 'thunder'];
-    const cx = 170, cy = 170, R = 118;
-    const pts = order.map((e, i) => { const a = -Math.PI / 2 + i * Math.PI * 2 / 6; return [cx + R * Math.cos(a), cy + R * Math.sin(a)]; });
+    const n = order.length, cx = 170, cy = 170, R = 118;
+    const pts = order.map((e, i) => { const a = -Math.PI / 2 + i * Math.PI * 2 / n; return [cx + R * Math.cos(a), cy + R * Math.sin(a)]; });
     let s = `<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--gold)"/></marker></defs>`;
     pts.forEach((p, i) => {
-      const q = pts[(i + 1) % 6], dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy), k = 34 / L;
+      const q = pts[(i + 1) % n], dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy), k = 34 / L;
       s += `<line x1="${p[0] + dx * k}" y1="${p[1] + dy * k}" x2="${q[0] - dx * k}" y2="${q[1] - dy * k}" stroke="var(--gold)" stroke-width="2" marker-end="url(#arr)"/>`;
     });
     pts.forEach((p, i) => { const e = ELEMENTS[order[i]];
@@ -289,7 +289,7 @@
         <h2>${c.name}</h2>
         <div class="row">${c.element !== 'none' ? elBadge(c.element) : '<span class="chip">특수 성좌</span>'}<span class="chip">상징: ${c.motif}</span></div>
         <dl><dt>성격</dt><dd>${c.personality}</dd><dt>대표 계약자</dt><dd>${c.contractor}</dd>
-          <dt>계약 효과</dt><dd>${c.pact}</dd><dt>별자리 버프</dt><dd>${c.guild}</dd></dl>
+          <dt>계약 효과</dt><dd>${c.pact}</dd><dt>별무리 버프</dt><dd>${c.guild}</dd></dl>
         <div class="secret">${c.secret}</div>
       </div></div>`);
   }
