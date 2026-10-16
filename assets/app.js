@@ -96,6 +96,7 @@
     ['codex', '세계 백과', '역사, 지역 생활, 제도, 경제 설계, 결사, 자연, FAQ'],
     ['story', '스토리', '메인 미스터리, 장 구성, 반전, 네 주인공 관계'],
     ['growth', '성장 · 인크리멘탈', '5단계 해방, 재화, 공식, 시즌 초월'],
+    ['items', '아이템 설계', '회복 음식, 배부름, 전용 재화 총람, 장비 슬롯·등급·강화, 재료 사전'],
     ['combat', '전투 · 직업', '자동사냥, 탐사대, 4직업 8속성, 상성, 엘리트 AI'],
     ['guild', '별자리 · PvP', '길드, 영지, 성좌 전쟁, 천궁과 국왕'],
     ['map', '월드맵', '7개 지역, 마을, 지역 제작 기준'],
@@ -386,6 +387,16 @@
       `<button data-zoom="${(s.src || sheetSrc(s.key))}" data-cap="${s.who} · ${s.title}"><img src="${(s.src || sheetSrc(s.key))}" alt="${s.who} ${s.title}" loading="lazy"><div class="cap"><b>${s.who}</b>${s.title}</div></button>`).join('');
   }
   renderGallery();
+
+  /* ── 아이템: 재료 사전 ─────────────────── */
+  (function dropTable() {
+    const map = new Map();
+    MONSTERS.forEach(m => m.drops.forEach(dr => { if (!map.has(dr)) map.set(dr, []); map.get(dr).push(m.name); }));
+    const rows = [...map.entries()].filter(([dr]) => DROP_USES[dr] !== '—');
+    const missing = rows.filter(([dr]) => !DROP_USES[dr]).length;
+    $('#dropTable').innerHTML = `<tr><th>드롭 (${rows.length}종${missing ? ` · 미정 ${missing}` : ''})</th><th>나오는 곳</th><th>쓰임</th></tr>` + rows.map(([dr, ms]) =>
+      `<tr><td>${esc(dr)}</td><td style="font-size:13px;color:var(--muted)">${ms.map(esc).join(', ')}</td><td>${DROP_USES[dr] ? esc(DROP_USES[dr]) : '<b style="color:#c4573d">미정</b>'}</td></tr>`).join('');
+  })();
 
   route();
 })();
