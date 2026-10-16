@@ -117,37 +117,37 @@
   /* ── 전투: 직업 표 · 전직 · 상성 ─────────── */
   const CLASSES = [
     { cls: '검사', hero: '루미', els: [['fire', '공격적 강화 — 연속 베기, 화상'], ['light', '방어 · 성스러운 힘 — 보호막, 도발']] },
-    { cls: '궁수', hero: '포코', els: [['wind', '빠른 연사와 이동 — 다중 사격, 회피'], ['thunder', '번개 화살 — 관통하며 튕기는 연쇄, 감전']] },
+    { cls: '궁수', hero: '포코', els: [['wind', '빠른 연사와 이동 — 다중 사격, 회피'], ['dark', '그림자 화살 — 표식, 받는 피해 증가, 은신']] },
     { cls: '힐러', hero: '네무', els: [['water', '회복 — 지속 치유, 정화'], ['ice', '보호막 / 제어 — 둔화, 빙결']] },
-    { cls: '마법사', hero: '모리', els: [['dark', '저주와 지속 피해 — 약화, 흡수'], ['earth', '대지와 무게 — 중력 장판, 석화, 범위 둔화']] },
+    { cls: '마법사', hero: '모리', els: [['earth', '대지와 무게 — 중력 장판, 석화, 범위 둔화'], ['thunder', '폭발적인 공격 — 범위, 연쇄']] },
   ];
   $('#classTable').innerHTML = `<tr><th>직업</th><th>주인공</th><th>속성 A</th><th>속성 B</th></tr>` + CLASSES.map(c =>
     `<tr><td><b>${c.cls}</b></td><td>${c.hero}</td>${c.els.map(([e, d]) => `<td>${elBadge(e)}<br><span style="font-size:13px">${d}</span></td>`).join('')}</tr>`).join('');
   const ADV = [
     ['0차 · 견습', '시작', ['견습 검사', '견습 궁수', '견습 치유사', '견습 마법사']],
     ['1차 · 직업', 'Lv 40 · 1장', ['검사', '궁수', '힐러', '마법사']],
-    ['2차 · 속성 선택', 'Lv 60 · 2장 · 공명 4', ['화염검사 / 성광기사', '바람사수 / 뇌명사수', '샘물사제 / 서리사제', '그믐술사 / 대지술사']],
-    ['3차 · 속성 각성', 'Lv 100 · 4장 · 공명 7', ['홍련검성 / 여명수호자', '질풍사수 / 천둥사수', '생명의 샘 / 빙화 수호자', '칠흑마도 / 거암마도']],
+    ['2차 · 속성 선택', 'Lv 60 · 2장 · 공명 4', ['화염검사 / 성광기사', '바람사수 / 그림자사수', '샘물사제 / 서리사제', '대지술사 / 뇌전술사']],
+    ['3차 · 속성 각성', 'Lv 100 · 4장 · 공명 7', ['홍련검성 / 여명수호자', '질풍사수 / 그믐사수', '생명의 샘 / 빙화 수호자', '거암마도 / 천뢰마도']],
     ['4차 · 성좌 강림', '5장 · 공명 9', ['칭호 「(계약 성좌)의 검」', '「…의 화살」', '「…의 종」', '「…의 별」']],
   ];
   $('#advTable').innerHTML = `<tr><th>단계</th><th>조건</th><th>검사</th><th>궁수</th><th>힐러</th><th>마법사</th></tr>` +
     ADV.map(([s, c, a]) => `<tr><td><b>${s}</b></td><td class="num">${c}</td>${a.map(x => `<td>${x}</td>`).join('')}</tr>`).join('');
 
   (function ring() {
-    const order = ['water', 'fire', 'ice', 'wind', 'earth', 'thunder'];
-    const n = order.length, cx = 170, cy = 170, R = 118;
-    const pts = order.map((e, i) => { const a = -Math.PI / 2 + i * Math.PI * 2 / n; return [cx + R * Math.cos(a), cy + R * Math.sin(a)]; });
+    // 자연 고리 · 별빛 고리 — 고리마다 네 속성이 한 방향으로 돈다
+    const rings = [['자연 고리', ['water', 'fire', 'wind', 'earth']], ['별빛 고리', ['ice', 'thunder', 'dark', 'light']]];
     let s = `<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--gold)"/></marker></defs>`;
-    pts.forEach((p, i) => {
-      const q = pts[(i + 1) % n], dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy), k = 34 / L;
-      s += `<line x1="${p[0] + dx * k}" y1="${p[1] + dy * k}" x2="${q[0] - dx * k}" y2="${q[1] - dy * k}" stroke="var(--gold)" stroke-width="2" marker-end="url(#arr)"/>`;
+    rings.forEach(([title, order], k) => {
+      const cx = 92 + k * 176, cy = 112, R = 58;
+      const pts = order.map((e, i) => { const ang = -Math.PI / 2 + i * Math.PI / 2; return [cx + R * Math.cos(ang), cy + R * Math.sin(ang)]; });
+      s += `<text x="${cx}" y="22" text-anchor="middle" fill="var(--muted)" font-size="12" font-weight="700">${title}</text>`;
+      pts.forEach((p, i) => {
+        const q = pts[(i + 1) % 4], dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy), m = 30 / L;
+        s += `<line x1="${p[0] + dx * m}" y1="${p[1] + dy * m}" x2="${q[0] - dx * m}" y2="${q[1] - dy * m}" stroke="var(--gold)" stroke-width="2" marker-end="url(#arr)"/>`;
+      });
+      pts.forEach((p, i) => { const e = ELEMENTS[order[i]];
+        s += `<circle cx="${p[0]}" cy="${p[1]}" r="24" fill="${e.color}"/><text x="${p[0]}" y="${p[1] - 2}" text-anchor="middle" fill="#fff" font-size="14" font-family="Gowun Batang,serif" font-weight="700">${e.glyph}</text><text x="${p[0]}" y="${p[1] + 13}" text-anchor="middle" fill="#fff" font-size="10">${e.name}</text>`; });
     });
-    pts.forEach((p, i) => { const e = ELEMENTS[order[i]];
-      s += `<circle cx="${p[0]}" cy="${p[1]}" r="28" fill="${e.color}"/><text x="${p[0]}" y="${p[1] - 2}" text-anchor="middle" fill="#fff" font-size="15" font-family="Gowun Batang,serif" font-weight="700">${e.glyph}</text><text x="${p[0]}" y="${p[1] + 14}" text-anchor="middle" fill="#fff" font-size="10.5">${e.name}</text>`; });
-    const L = ELEMENTS.light, D = ELEMENTS.dark;
-    s += `<circle cx="${cx - 26}" cy="${cy}" r="22" fill="${L.color}"/><circle cx="${cx + 26}" cy="${cy}" r="22" fill="${D.color}"/>
-      <text x="${cx - 26}" y="${cy + 5}" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">빛</text><text x="${cx + 26}" y="${cy + 5}" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">어둠</text>
-      <text x="${cx}" y="${cy + 40}" text-anchor="middle" fill="var(--muted)" font-size="11">서로 ×1.3</text>`;
     $('#ringSvg').innerHTML = s;
   })();
 
