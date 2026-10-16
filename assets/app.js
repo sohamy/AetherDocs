@@ -328,6 +328,8 @@
         <div class="row">${gradeBadge(x.grade)}${elBadge(x.element)}${x.added ? '<span class="badge-add">보완</span>' : ''}</div>
         <p>${x.locked ? '아직 밝혀지지 않았다. 시즌 스토리와 함께 공개된다.' : esc(x.desc)}</p>
         <dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>
+        ${x.gallery ? `<h4 style="margin:16px 0 8px">원화</h4><div class="mini-gallery">${x.gallery.map(([src, cap]) =>
+          `<figure style="margin:0"><img src="${src}" alt="${esc(x.name)} ${cap}" data-zoom="${src}" data-cap="${esc(x.name)} · ${cap}" loading="lazy"><figcaption style="font-size:12px;color:var(--muted);margin-top:4px">${cap}</figcaption></figure>`).join('')}</div>` : ''}
         <p style="font-size:12.5px;color:var(--muted);margin-top:14px">${x.img ? '※ 그림을 누르면 크게 볼 수 있다' : '※ 아이콘은 원화 제작 전 임시 표시'}</p>
       </div></div>`);
   };
