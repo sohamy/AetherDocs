@@ -313,20 +313,22 @@
   const dexCard = (x, i, sub) => {
     const c = (ELEMENTS[x.element] || ELEMENTS.none).color;
     return `<button class="dex-card" data-i="${i}">
-      <div class="dex-art${x.locked ? ' locked' : ''}" style="${artBg(c)}"><span class="no">No.${String(i + 1).padStart(3, '0')}</span><span class="tag">${gradeBadge(x.grade)}</span><span class="emo">${x.emoji}</span></div>
+      <div class="dex-art${x.locked ? ' locked' : ''}" style="${artBg(c)}"><span class="no">No.${String(i + 1).padStart(3, '0')}</span><span class="tag">${gradeBadge(x.grade)}</span>${x.img ? `<img class="dex-img" src="${x.img}" alt="${esc(x.name)}" loading="lazy">` : `<span class="emo">${x.emoji}</span>`}</div>
       <div class="dex-info"><h4>${x.locked ? '???' : esc(x.name)}${addBadge(x.added)}</h4><div class="row">${elBadge(x.element)}${sub}</div><div class="sub">${x.locked ? '아직 밝혀지지 않았다.' : esc(x.desc)}</div></div></button>`;
   };
   const dexModal = (x, i, label, rows) => {
     const c = (ELEMENTS[x.element] || ELEMENTS.none).color;
     openModal(`<div class="modal-inner">
-      <div class="modal-art${x.locked ? ' locked' : ''}" style="${artBg(c)}"><span class="emo" style="${x.locked ? 'filter:grayscale(1) brightness(.35)' : ''}">${x.emoji}</span></div>
+      <div class="modal-art${x.locked ? ' locked' : ''}${x.img ? ' has-img' : ''}" style="${artBg(c)}">${x.img
+        ? `<img src="${x.img}" alt="${esc(x.name)}" data-zoom="${x.img}" data-cap="${esc(x.name)} · 컨셉아트">`
+        : `<span class="emo" style="${x.locked ? 'filter:grayscale(1) brightness(.35)' : ''}">${x.emoji}</span>`}</div>
       <div class="modal-body">
         <div class="k" style="color:var(--muted);font-size:12px">${label} No.${String(i + 1).padStart(3, '0')}</div>
         <h2>${x.locked ? '???' : esc(x.name)}</h2>
         <div class="row">${gradeBadge(x.grade)}${elBadge(x.element)}${x.added ? '<span class="badge-add">보완</span>' : ''}</div>
         <p>${x.locked ? '아직 밝혀지지 않았다. 시즌 스토리와 함께 공개된다.' : esc(x.desc)}</p>
         <dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>
-        <p style="font-size:12.5px;color:var(--muted);margin-top:14px">※ 아이콘은 원화 제작 전 임시 표시</p>
+        <p style="font-size:12.5px;color:var(--muted);margin-top:14px">${x.img ? '※ 그림을 누르면 크게 볼 수 있다' : '※ 아이콘은 원화 제작 전 임시 표시'}</p>
       </div></div>`);
   };
 

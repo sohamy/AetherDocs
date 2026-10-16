@@ -239,8 +239,8 @@ const CONSTELLATIONS = [
 
 const MONSTERS = [
   // 1. 별이끼 초원
-  { name: '별먼지 슬라임', region: 1, element: 'light', grade: '일반', lv: '1–5', emoji: '🫧',
-    desc: '별빛 찌꺼기를 먹고 커진 작은 젤리 생물. 몸속에 삼킨 별가루가 반짝인다.', behavior: '느리게 통통 튀며 다가온다. 처치하면 별가루를 터뜨린다.', drops: ['별가루', '말랑 젤리'] },
+  { name: '별먼지 슬라임', region: 1, element: 'light', grade: '일반', lv: '1–5', emoji: '🫧', img: 'assets/img/monsters/stardust-slime.webp',
+    desc: '별빛 찌꺼기를 먹고 커진 작은 젤리 생물. 연보라빛으로 비치는 몸속에 삼킨 별가루가 별 무늬로 떠다니며 반짝인다. 밤이면 몸 전체가 은은하게 빛나서 별이끼 초원의 꽃밭을 비춘다.', behavior: '느리게 통통 튀며 다가온다. 처치하면 별가루를 터뜨린다.', drops: ['별가루', '말랑 젤리'] },
   { name: '이슬콩 달팽이', region: 1, element: 'water', grade: '일반', lv: '3–8', emoji: '🐌', added: true,
     desc: '등껍질에 별이슬이 고여 낮에도 은은하게 빛나는 달팽이.', behavior: '지나간 자리에 미끄러운 이슬 길을 남긴다. 밟으면 잠깐 미끄러진다.', drops: ['별이슬', '단단한 껍질 조각'] },
   { name: '별먹이 두더지', region: 1, element: 'earth', grade: '일반', lv: '6–12', emoji: '🐹',

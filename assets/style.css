@@ -330,3 +330,9 @@ footer { max-width: 1200px; margin: 0 auto; padding: 24px 16px 40px; color: var(
   .modal-body dd { margin-bottom: 8px; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+/* 도감 원화가 있는 항목 */
+.dex-art .dex-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.dex-art .no, .dex-art .tag { z-index: 1; }
+.modal-art.has-img { padding: 0; overflow: hidden; }
+.modal-art.has-img img { width: 100%; height: 100%; max-height: none; object-fit: cover; padding: 0; cursor: zoom-in; }
