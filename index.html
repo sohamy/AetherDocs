@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=202610181000">
+<link rel="stylesheet" href="assets/style.css?v=202610181030">
 </head>
 <body>
 
@@ -1154,6 +1154,7 @@
           <tr><td>일일 의뢰</td><td>지역 마을마다 3개(지역 고민 표에서 뽑음). 보상: 아침 이슬, 별글자 책장</td><td>광장 게시판의 부탁 쪽지</td></tr>
           <tr><td>주간 의뢰</td><td>오울라의 주간 별 관측 — 지역 하나를 정해 정화·채집·발견 목표</td><td>기록관의 관찰 일지</td></tr>
           <tr><td>던전</td><td>“별똥별 구덩이” — 떨어진 성좌 조각 안쪽. 주 3회 보상, 1~4명</td><td>별똥별이 판 구덩이 속 별빛 미로</td></tr>
+          <tr><td>요일 던전</td><td>「당번 별의 문」 — 요일마다 속성 하나, 단계 무한, 하루 3회, 소탕 가능(전투·직업 1++)</td><td>그날 가장 높이 뜬 당번 별이 별 곳간 문을 연다</td></tr>
           <tr><td>파티 매칭</td><td>던전·레이드 자동 매칭. 던전은 최대 4명, 레이드는 10·30명. 같은 주인공끼리도 파티를 맺을 수 있다</td><td>아라의 실 잇기 게시판 — 겹별과 갈래를 잇는 실</td></tr>
           <tr><td>우편</td><td>보관 30일 후 별무리 회관(또는 여관)에 맡겨져 30일 더 보관</td><td>삐요가 회관에 맡긴다</td></tr>
           <tr><td>튜토리얼</td><td>첫 서버의 첫 헌터만 초원 서장 필수. 다른 서버에서 새로 시작한 헌터는 “빠른 길”로 서장 건너뛰기</td><td>오울라 할머니가 “다 아는 얘기지?”</td></tr>
@@ -1413,7 +1414,8 @@
           <tr><td>🪨 숫돌</td><td>장비 재련</td><td>보스 상자, 별무리 상점</td><td>부가 옵션 다시 뽑기</td><td>—</td><td>귀속</td><td>투박의 별무늬 숫돌</td></tr>
           <tr><td>🧱 주괴(구리·별철·별금·핵돌)</td><td>장비 승급 · 제작</td><td>광물 제련</td><td>승급</td><td>—</td><td>가능</td><td>녹인 금속</td></tr>
           <tr><td>✧ 별빛</td><td>공명 · 전직 · 스킬</td><td>몬스터 정화(경험), 엘리트·보스</td><td>공명 단계, 전직, 스킬 해방</td><td>—</td><td>귀속</td><td>몸속의 빛</td></tr>
-          <tr><td>📜 별글자 책장</td><td>스킬 레벨</td><td>지역 보스, 일일 의뢰</td><td>스킬 레벨업</td><td>—</td><td>귀속</td><td>마법서 한 장</td></tr>
+          <tr><td>💠 공명 조각</td><td>보조 계약 · 속성 갈래</td><td>금요일 뿔 번개 골짜기, 성좌 전쟁 보상</td><td>보조 슬롯 장착(2차 전직 속성 교체)</td><td>—</td><td>귀속</td><td>성좌가 나눠 준 별빛 한 조각</td></tr>
+          <tr><td>📜 별글자 책장</td><td>스킬 레벨</td><td>지역 보스, 일일 의뢰, 월요일 그믐 서고</td><td>스킬 레벨업</td><td>—</td><td>귀속</td><td>마법서 한 장</td></tr>
           <tr><td>🗝️ 전직의 증표</td><td>전직</td><td>장 보스(올드루트·미르·그레고르·노바) — 잔향 보스에서도 드롭되어 스토리를 지난 뒤에도 얻는다</td><td>전직 의식 1회</td><td>—</td><td>귀속</td><td>보스의 핵</td></tr>
           <tr><td>◆ 별핵</td><td>계정 배수(3단계)</td><td>보스, 별똥별</td><td>별핵 노드</td><td>—</td><td>귀속</td><td>굳은 별빛</td></tr>
           <tr><td>🍚 별모이</td><td>펫 레벨</td><td>사냥 낮은 확률, 별비, 펫 탐험, 아침 이슬 상점, 기여 매듭 상점</td><td>펫 레벨업</td><td>사냥 획득 하루 상한</td><td>귀속</td><td>별동무만 먹는 빛 알갱이</td></tr>
@@ -1862,7 +1864,7 @@
 <section class="panel" id="combat" role="tabpanel">
   <div class="doc">
     <aside class="toc"><b>목차</b>
-      <a href="#c-1">1. 자동사냥</a><a href="#c-farm">1+. 끝없는 깊이</a><a href="#c-2">2. 헌터와 파티</a><a href="#c-3">3. 스킬 구조</a><a href="#c-4">4. 4직업 8속성</a><a href="#c-5">5. 전직 단계</a><a href="#c-6">6. 속성 상성</a><a href="#c-7">7. 엘리트 AI 성격</a>
+      <a href="#c-1">1. 자동사냥</a><a href="#c-farm">1+. 끝없는 깊이</a><a href="#c-day">1++. 요일 던전</a><a href="#c-2">2. 헌터와 파티</a><a href="#c-3">3. 스킬 구조</a><a href="#c-4">4. 4직업 8속성</a><a href="#c-5">5. 전직 단계</a><a href="#c-6">6. 속성 상성</a><a href="#c-7">7. 엘리트 AI 성격</a>
     </aside>
     <div class="doc-body">
       <div class="doc-head">
@@ -1903,6 +1905,35 @@
           <tr><td>파티</td><td>파티 깊이 = 파티장 기준. 파티로 더 깊이 내려가 혼자일 때보다 높은 기록을 낸다</td></tr>
         </table></div>
         <div class="callout design"><b>세기는 지수, 보상은 선형.</b> 깊이 내려갈수록 버티기는 급격히 어려워지는데 보상은 일정하게만 늘어서, 한계 직전 깊이는 “기록”의 자리이고 가장 효율 좋은 사냥 자리는 그보다 조금 얕은 곳이다. 성장(해방 배수)도 지수로 커지므로, 새 배수가 열릴 때마다 한계가 한꺼번에 몇십 단씩 내려간다 — 인크리멘탈의 “벽 → 해방 → 돌파” 리듬. 초기화가 없는 대신 “깊이”가 끝없는 숫자 목표가 된다. 레벨·장비·해방 배수가 오르면 같은 지역에서도 더 깊이 내려가고, 깊이가 곧 보상 배수라 성장이 바로 체감된다. 탈진은 실패가 아니라 “여기가 지금 내 한계”라는 표시다(죽음 없음 원칙 · 제자리 깨어남과 연결).</div>
+      </section>
+
+      <section class="sec" id="c-day"><h2><span class="no">01++</span>요일 던전 「당번 별의 문」 <span class="badge-add">보완</span></h2>
+        <p>요일마다 <b>속성 하나</b>를 맡은 성좌가 자기 별 곳간의 문을 연다. 그날의 속성 몬스터만 나오는 던전이라, 상성에 맞는 주인공·조각을 챙기면 훨씬 깊이 내려간다. 보상은 요일마다 다른 <b>성장 재료 한 가지</b>.</p>
+        <div class="card"><h4>세계관 — 당번 별</h4><p>큰 성좌들은 하늘에서 돌아가며 하루씩 가장 높이 뜬다. 그날 가장 높은 성좌를 “당번 별”이라 부르고, 당번 별은 신전 별창 아래 자기 <b>별 곳간</b>의 문을 연다. 곳간에는 그 성좌의 별빛이 300년 동안 고여 몬스터 모양으로 굳어 있어, 헌터가 정화해 주는 만큼 곳간의 보물을 나눠 준다. 수인들의 일곱 날 이름(달·불·물·나무·쇠·흙·해)이 당번 순서에서 왔다.</p></div>
+        <div class="tbl-wrap"><table class="tbl" style="min-width:900px">
+          <tr><th>요일</th><th>속성</th><th>당번 별</th><th>던전</th><th>주는 것</th><th>유리한 주인공(상성)</th></tr>
+          <tr><td>월(달)</td><td>어둠</td><td>녹스</td><td>그믐 서고 — 달빛 없는 책장 사이</td><td>별글자 책장(스킬 레벨)</td><td>모리 — 번개 → 어둠</td></tr>
+          <tr><td>화(불)</td><td>불</td><td>카르나</td><td>화로 굴 — 꺼지지 않는 화로 속</td><td>주괴(장비 승급)</td><td>네무 — 물 → 불</td></tr>
+          <tr><td>수(물)</td><td>물 · 얼음</td><td>마레 · 린(자매가 함께)</td><td>물방울 종의 샘 — 물과 얼음이 번갈아 흐르는 샘</td><td>별모이(펫 레벨)</td><td>모리 — 땅 → 물 · 루미 — 빛 → 얼음</td></tr>
+          <tr><td>목(나무)</td><td>땅</td><td>오크라</td><td>도토리 창고 — 늙은 거북의 굴</td><td>별 조각 · 큰 별 조각(강화)</td><td>포코 — 바람 → 땅</td></tr>
+          <tr><td>금(쇠)</td><td>번개</td><td>볼타</td><td>뿔 번개 골짜기 — 쇠 피뢰침 숲</td><td>공명 조각(속성 갈래 교체)</td><td>네무 — 얼음 → 번개</td></tr>
+          <tr><td>토(흙)</td><td>바람</td><td>시엘</td><td>바람 길 미로 — 매번 바뀌는 깃털 길</td><td>숫돌(각인) · 문양 재료</td><td>루미 — 불 → 바람</td></tr>
+          <tr><td>일(해)</td><td>빛</td><td>루체</td><td>등불의 정원 — 쉬는 날의 축제 정원</td><td>별가루 대량 + 이번 주 던전 하나를 골라 다시 열기</td><td>포코 — 어둠 → 빛</td></tr>
+        </table></div>
+        <p style="font-size:14px">주인공마다 유리한 요일이 둘씩이다(모리 월·수, 네무 화·금, 루미 수·토, 포코 목·일). 아라·클라비는 속성이 없어 당번을 서지 않는다 — 아라는 성좌 전쟁(수·토 밤)의 결계를 맡는다.</p>
+        <h3>규칙(가안)</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>항목</th><th>규칙</th></tr>
+          <tr><td>단계</td><td>단계가 끝없이 이어진다 — 끝없는 깊이와 같은 규칙. 세기는 단계마다 ×1.15(지수), 보상은 단계마다 +10%p(선형)</td></tr>
+          <tr><td>입장</td><td>하루 3회 무료. 실패하면 횟수가 줄지 않는다. 혼자 또는 4명 파티(같은 주인공 중복 가능)</td></tr>
+          <tr><td>시간</td><td>한 판 3분. 시간 안에 곳간의 문지기(그날 속성의 보스)를 정화하면 클리어</td></tr>
+          <tr><td>소탕</td><td>클리어한 최고 단계 이하는 바로 소탕(즉시 완료) — 방치형 배려</td></tr>
+          <tr><td>첫 클리어</td><td>단계마다 첫 클리어 보상, 10단계마다 소원 조각</td></tr>
+          <tr><td>속성 규칙</td><td>던전 몬스터는 모두 그날 속성. 상성 공격 ×1.3이 그대로 붙어, 보조 조각을 바꿔 끼워 2차 전직 갈래를 맞추면 더 깊이 간다(조각 교체는 성좌 전쟁 시간에만 잠김)</td></tr>
+          <tr><td>순위</td><td>요일별 최고 단계 주간 순위(미오의 순위판) — 칭호·외형만</td></tr>
+          <tr><td>일요일</td><td>등불의 정원(빛) 또는 월~토 던전 가운데 하나를 골라 연다</td></tr>
+        </table></div>
+        <div class="callout design">요일 던전은 ① 재료를 종류별로 확실히 얻는 길(필드 깊이는 재료가 섞여 나온다), ② 상성과 보조 조각 교체를 쓰게 만드는 자리, ③ 주인공마다 “내 요일”을 만들어 파티를 짜게 하는 장치다. 지금까지 획득처가 없던 공명 조각을 금요일 볼타의 골짜기에서 준다.</div>
       </section>
 
       <section class="sec" id="c-2"><h2><span class="no">02</span>헌터와 파티 <span class="badge-add">보완</span></h2>
@@ -2365,7 +2396,7 @@
 <dialog id="modal"><button class="modal-close" type="button" aria-label="닫기">✕</button><div id="modalContent"></div></dialog>
 <dialog id="lightbox" class="lightbox"><button class="modal-close" type="button" aria-label="닫기">✕</button><img alt=""><div class="cap"></div></dialog>
 
-<script src="assets/data.js?v=202610181000"></script>
-<script src="assets/app.js?v=202610181000"></script>
+<script src="assets/data.js?v=202610181030"></script>
+<script src="assets/app.js?v=202610181030"></script>
 </body>
 </html>
