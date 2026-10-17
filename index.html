@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=202610171950">
+<link rel="stylesheet" href="assets/style.css?v=202610181000">
 </head>
 <body>
 
@@ -106,7 +106,7 @@
 
       <section class="sec" id="ov-3"><h2><span class="no">03</span>핵심 루프</h2>
         <div class="grid g3">
-          <div class="card"><div class="k">작은 루프 · 몇 분</div><h4>사냥 → 강화</h4><p>자동사냥으로 별가루를 모으고, 장비를 강화하고 레벨을 올려 한 칸 위 사냥터로 옮긴다.</p></div>
+          <div class="card"><div class="k">작은 루프 · 몇 분</div><h4>사냥 → 강화</h4><p>자동사냥으로 별가루를 모으고, 장비를 강화하고 레벨을 올려 사냥터를 한 단 더 깊이 내려간다.</p></div>
           <div class="card"><div class="k">중간 루프 · 며칠</div><h4>해방 → 배수</h4><p>별빛·별핵 단계를 해방할 때마다 성장 속도 자체가 배수로 빨라진다. “숫자가 갑자기 커지는 순간”이 주기적으로 온다.</p></div>
           <div class="card"><div class="k">큰 루프 · 몇 주</div><h4>별무리 → 천궁</h4><p>성좌 전쟁으로 영지를 얻으면 사냥 효율이 오르고, 4주마다 천궁 쟁탈전에서 빈자리에 우리 수호 성좌를 새긴다.</p></div>
         </div>
@@ -575,6 +575,7 @@
           <tr><td>채팅 · 길드 채팅</td><td>별 방울</td><td>—</td></tr>
           <tr><td>친구 · 파티</td><td>실 잇기 · 파티</td><td>아라(성좌)</td></tr>
           <tr><td>길드</td><td>별무리</td><td>미오의 별무리 회관</td></tr>
+          <tr><td>길드 경매 · 분배</td><td>깃대 나눔 — 깃대 아래 전리품을 펼쳐 값을 정하고 함께 싸운 이들이 나눈다</td><td>별무리 회관</td></tr>
           <tr><td>랭킹</td><td>미오의 순위판, 천궁 벽의 이름</td><td>별무리 회관</td></tr>
           <tr><td>출석 체크</td><td>아침 이슬 받기 — 매일 아침 창가의 이슬 병</td><td>집</td></tr>
           <tr><td>오프라인 보상</td><td>여관 장부 — 자는 동안 별동무가 번 별가루</td><td>포근</td></tr>
@@ -729,6 +730,7 @@
           <tr><td><b>등록 보증금</b></td><td>게시판에 물건을 걸 때</td><td class="num">판매가의 0.5%</td><td>팔리면 돌려받음 · 기한 내 안 팔리면 소멸</td><td>가격 도배 · 시세 조작 방지</td></tr>
           <tr><td><b>영지세</b></td><td>영지 안 마을 서비스를 쓸 때</td><td class="num">상점·여관·요리 0~5% · 강화 0~2%</td><td>영지 별무리 금고. 자기 별무리원 면제</td><td>영지 쟁탈의 실익. 강화는 지수 비용이라 상한을 낮춤</td></tr>
           <tr><td><b>배달비</b></td><td>다른 지역 마을 서비스를 원격으로 부를 때</td><td class="num">2%</td><td>소멸(삐요의 품삯)</td><td>“지금 있는 지역”의 서비스를 쓰게 해 영지세가 실제로 걷힘</td></tr>
+          <tr><td><b>깃대 나눔 몫</b></td><td>별무리 경매가 낙찰될 때</td><td class="num">낙찰가의 10%</td><td>5% 소멸(큰 등불) · 5% 별무리 금고. 나머지 90%는 전투 참가자에게 직접</td><td>별무리 콘텐츠의 별가루 회수. 금고 → 개인 지급 금지 원칙 유지</td></tr>
           <tr><td><b>천궁 공물</b></td><td>장터 몫에서 자동</td><td class="num">장터 몫 중 0.5%p</td><td>천궁 금고</td><td>천궁 별무리 권한의 재원. 천궁 주기(4주) 끝에 남으면 소멸</td></tr>
         </table></div>
         <div class="tbl-wrap"><table class="tbl">
@@ -1846,7 +1848,8 @@
           <tr><td>5단계 해방</td><td>단계가 열릴 때마다 새 배수가 곱해진다(공명 ×20, 별핵 ×1,000 …)</td><td>단계 안에서는 수확 체감, 다음 단계가 새 문</td></tr>
           <tr><td>보유 효과</td><td>펫·변신을 모을수록 계정이 강해진다</td><td>스탯 계열마다 합계 상한, 넘친 수집은 칭호·외형</td></tr>
           <tr><td>새 레이드</td><td>강화 상한 +1, 성좌 단계 +1</td><td>업데이트마다 한 칸</td></tr>
-          <tr><td>새 지역 · 사냥터 층</td><td>몬스터 체력이 지역마다 10~30배 — 다음 해방 시점을 만든다</td><td>업데이트마다 확장</td></tr>
+          <tr><td>사냥터 깊이</td><td>깊이 1단마다 몬스터 ×1.15(지수), 보상 +10%p(선형) — 쓰러지기 전까지 끝없이 내려간다</td><td>끝 없음</td></tr>
+          <tr><td>새 지역</td><td>몬스터 기본 세기가 지역마다 10~30배 — 다음 해방 시점을 만든다</td><td>업데이트마다 확장</td></tr>
         </table></div>
         <div class="callout intent">벽이 오면 새 문이 열린다(설계 원칙 ②). 초기화 대신 “다음 단계 해방”과 “새 레이드”가 성장 속도를 다시 끌어올린다.</div>
       </section>
@@ -1859,7 +1862,7 @@
 <section class="panel" id="combat" role="tabpanel">
   <div class="doc">
     <aside class="toc"><b>목차</b>
-      <a href="#c-1">1. 자동사냥</a><a href="#c-2">2. 헌터와 파티</a><a href="#c-3">3. 스킬 구조</a><a href="#c-4">4. 4직업 8속성</a><a href="#c-5">5. 전직 단계</a><a href="#c-6">6. 속성 상성</a><a href="#c-7">7. 엘리트 AI 성격</a>
+      <a href="#c-1">1. 자동사냥</a><a href="#c-farm">1+. 끝없는 깊이</a><a href="#c-2">2. 헌터와 파티</a><a href="#c-3">3. 스킬 구조</a><a href="#c-4">4. 4직업 8속성</a><a href="#c-5">5. 전직 단계</a><a href="#c-6">6. 속성 상성</a><a href="#c-7">7. 엘리트 AI 성격</a>
     </aside>
     <div class="doc-body">
       <div class="doc-head">
@@ -1870,7 +1873,7 @@
 
       <section class="sec" id="c-1"><h2><span class="no">01</span>자동사냥 규칙 <span class="badge-add">보완</span></h2>
         <div class="flow">
-          <div class="step"><b>사냥터 선택</b><span>지역 · 층</span></div><span class="arrow">➜</span>
+          <div class="step"><b>사냥터 선택</b><span>지역 · 깊이</span></div><span class="arrow">➜</span>
           <div class="step"><b>자동 이동</b><span>가까운 적 탐색</span></div><span class="arrow">➜</span>
           <div class="step"><b>자동 전투</b><span>스킬 자동 사용</span></div><span class="arrow">➜</span>
           <div class="step"><b>자동 줍기</b><span>펫이 범위 확장</span></div><span class="arrow">➜</span>
@@ -1878,8 +1881,28 @@
         </div>
         <div class="grid g2">
           <div class="card"><h4>손댈 여지 — 수동 개입</h4><ul><li>궁극기(성좌 강림) 타이밍</li><li>엘리트·황금 몬스터 추적</li><li>별똥별 이벤트 합류</li><li>보스 패턴 회피(선택)</li></ul></div>
-          <div class="card"><h4>켜 두기 편의</h4><ul><li>체력 낮으면 자동 도시락 / 귀환</li><li>사냥터 자동 승급(처치 속도 기준)</li><li>절전 모드(화면 어둡게, 숫자만)</li><li>이벤트 발생 시 푸시 알림</li></ul></div>
+          <div class="card"><h4>켜 두기 편의</h4><ul><li>체력 낮으면 자동 도시락 / 귀환</li><li>깊이 자동 하강(처치 속도 기준) · 탈진하면 한 단 물러남</li><li>절전 모드(화면 어둡게, 숫자만)</li><li>이벤트 발생 시 푸시 알림</li></ul></div>
         </div>
+      </section>
+
+
+      <section class="sec" id="c-farm"><h2><span class="no">01+</span>필드 파밍 — 끝없는 깊이 <span class="badge-add">보완</span></h2>
+        <p>필드 사냥의 기본 구조는 <b>난이도</b>다. 사냥터마다 난이도(<b>깊이</b>)가 끝없이 이어지고, 헌터는 쓰러지기(탈진) 전까지 한 단씩 더 깊이 내려간다. 인크리멘탈처럼 “어디까지 버티나”가 곧 성장의 눈금이다.</p>
+        <div class="card"><h4>세계관 — 탁한 별빛의 깊이</h4><p>사냥터는 땅에 박힌 파편에서 탁한 별빛이 고여 있는 곳이다. 파편에 가까이 갈수록 별빛이 짙어지고, 몬스터도 더 진하게 물든다. 그 짙기를 헌터들은 “깊이”라 부르고 “오늘은 몇 단까지 내려갔어?”라고 묻는다. 깊이는 끝이 없다 — 파편이 300년 동안 새어 낸 별빛이 겹겹이 쌓여 있기 때문이다.</p></div>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>항목</th><th>규칙(가안)</th></tr>
+          <tr><td>구조</td><td><b>지역</b>(테마 · 속성 · 드롭 종류) × <b>깊이</b>(난이도 1단 → 무한). 지역마다 기본 세기가 다르고(지역마다 약 10~30배), 그 안에서 깊이가 끝없이 오른다</td></tr>
+          <tr><td>몬스터 세기 — 지수</td><td>깊이 1단마다 체력·공격 ×1.15 (세기 = 기본 × 1.15<sup>깊이</sup>)</td></tr>
+          <tr><td>보상 — 선형</td><td>깊이 1단마다 별빛·별가루 +10%p (보상 = 기본 × (1 + 0.1 × 깊이)). 10단마다 재료 등급이 한 칸 오른다</td></tr>
+          <tr><td>자동 하강</td><td>처치 속도가 기준보다 빠르면 자동으로 한 단 더 내려간다(켜고 끄기 가능)</td></tr>
+          <tr><td>탈진하면</td><td>제자리 깨어남을 쓰면 같은 깊이에서 다시, 아니면 <b>한 단 물러나</b> 그 깊이에서 계속 사냥한다 — 버틸 수 있는 가장 깊은 곳에 자동으로 머문다</td></tr>
+          <tr><td>최고 깊이</td><td>지역마다 최고 기록이 남는다. 다음 접속 때 “최고 깊이 −5단”부터 바로 시작</td></tr>
+          <tr><td>오프라인</td><td>마지막으로 안정적으로 버틴 깊이 기준으로 쌓인다(효율 상한 85%는 그대로)</td></tr>
+          <tr><td>이정표</td><td>10단마다 “깊이 표지” 첫 도달 보상(소원 조각·재료), 50단마다 칭호. 지역별 최고 깊이는 미오의 순위판에 오른다</td></tr>
+          <tr><td>보스 · 엘리트</td><td>엘리트는 깊이에 맞춰 세지고, 잔향 보스는 지역 고정(깊이 무관)이라 따로 공략한다</td></tr>
+          <tr><td>파티</td><td>파티 깊이 = 파티장 기준. 파티로 더 깊이 내려가 혼자일 때보다 높은 기록을 낸다</td></tr>
+        </table></div>
+        <div class="callout design"><b>세기는 지수, 보상은 선형.</b> 깊이 내려갈수록 버티기는 급격히 어려워지는데 보상은 일정하게만 늘어서, 한계 직전 깊이는 “기록”의 자리이고 가장 효율 좋은 사냥 자리는 그보다 조금 얕은 곳이다. 성장(해방 배수)도 지수로 커지므로, 새 배수가 열릴 때마다 한계가 한꺼번에 몇십 단씩 내려간다 — 인크리멘탈의 “벽 → 해방 → 돌파” 리듬. 초기화가 없는 대신 “깊이”가 끝없는 숫자 목표가 된다. 레벨·장비·해방 배수가 오르면 같은 지역에서도 더 깊이 내려가고, 깊이가 곧 보상 배수라 성장이 바로 체감된다. 탈진은 실패가 아니라 “여기가 지금 내 한계”라는 표시다(죽음 없음 원칙 · 제자리 깨어남과 연결).</div>
       </section>
 
       <section class="sec" id="c-2"><h2><span class="no">02</span>헌터와 파티 <span class="badge-add">보완</span></h2>
@@ -1964,7 +1987,7 @@
 <section class="panel" id="guild" role="tabpanel">
   <div class="doc">
     <aside class="toc"><b>목차</b>
-      <a href="#gd-1">1. 왜 싸우는가</a><a href="#gd-2">2. 별무리</a><a href="#gd-3">3. 영지 · 성소</a><a href="#gd-4">4. 성좌 전쟁</a><a href="#gd-5">5. 천궁과 국왕</a><a href="#gd-6">6. 천궁 주기</a><a href="#gd-7">7. 소규모 배려</a>
+      <a href="#gd-1">1. 왜 싸우는가</a><a href="#gd-2">2. 별무리</a><a href="#gd-3">3. 영지 · 성소</a><a href="#gd-4">4. 성좌 전쟁</a><a href="#gd-5">5. 천궁과 국왕</a><a href="#gd-6">6. 천궁 주기</a><a href="#gd-7">7. 소규모 배려</a><a href="#gd-8">8. 깃대 나눔(경매)</a>
     </aside>
     <div class="doc-body">
       <div class="doc-head">
@@ -2068,6 +2091,55 @@
           <div class="card"><h4>방치 기여</h4><p>전쟁에 못 와도 사냥 기여가 별무리 점수로 들어간다.</p></div>
         </div>
       </section>
+
+      <section class="sec" id="gd-8"><h2><span class="no">08</span>별무리 경매 「깃대 나눔」 <span class="badge-add">보완</span></h2>
+        <p>별무리가 함께 잡은 전리품을 별무리 안에서 경매로 나누고, 낙찰 대금은 <b>함께 싸운 헌터들이 나눠 갖는</b> 콘텐츠. 필요한 사람은 별가루를 내고 물건을 갖고, 물건이 필요 없는 사람은 별가루를 받는다 — 같이 싸우면 누구도 빈손으로 돌아가지 않는다.</p>
+        <div class="card"><h4>세계관 — 깃대 아래 나눔</h4><p>첫 별무리 「들꽃 별무리」 시절부터 내려온 풍습. 함께 싸운 뒤 별무리 깃대 아래 전리품을 펼쳐 놓고, 가장 필요한 사람이 가장 많은 별가루를 내놓는다. 내놓은 별가루는 함께 싸운 이들이 나누고, 한 꼬집은 큰 등불에 바친다(헌터 수칙 4번). 탈진해 깨어나지 못한 동료 몫도 빼지 않는다(수칙 3번). 낙찰은 “깃대에 리본을 맨다”고 말한다.</p></div>
+
+        <h3>무엇을 나누나 — 별무리 전리품</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>나오는 곳</th><th>전리품(예)</th><th>메모</th></tr>
+          <tr><td>수호 보스(성역 인장으로 소환)</td><td>보스 승급 재료, 큰 별 조각 묶음, 숫돌 묶음</td><td>별무리 단위 주력 공급원</td></tr>
+          <tr><td>별무리 레이드(오르카스 · 코르를 별무리로 공략)</td><td>성좌 단계 승급 재료, 별고래 비늘 묶음, 희귀 외형</td><td>공개 모집 레이드 전리품은 개인 분배(경매 없음)</td></tr>
+          <tr><td>천궁 쟁탈전 우승</td><td>천궁 전리품 상자의 거래 가능분</td><td>우승 기념품(스텔·천궁 수호기사)은 경매 대상 아님</td></tr>
+          <tr><td>등불 지키기(디펜스)</td><td>마을 재료 묶음, 소원 조각 묶음</td><td>소원 조각은 거래 불가 재화라 경매 낙찰자에게 귀속</td></tr>
+        </table></div>
+        <p style="font-size:14px">전리품은 <b>“별무리 전리품”</b> 꼬리표가 붙어 장터에 바로 내놓을 수 없다. 낙찰되면 낙찰자에게 귀속된다 — 경매를 장터 우회로로 쓰지 못하게.</p>
+
+        <h3>진행 방식</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>단계</th><th>규칙(가안)</th></tr>
+          <tr><td>열림</td><td>전투가 끝나면 전리품이 별무리 회관 「깃대 나눔」 탭에 자동으로 올라간다. 미오가 알림을 보낸다</td></tr>
+          <tr><td>참가자 우선 입찰</td><td>처음 30분은 그 전투 참가자만 입찰한다</td></tr>
+          <tr><td>별무리 입찰</td><td>이후 90분은 별무리원 누구나(가입 7일 이상). 대금은 여전히 전투 참가자에게 간다</td></tr>
+          <tr><td>가격</td><td>오름 경매. 시작가 = 기준가의 50%, 입찰 단위 +5%. 기준가는 장터 시세(없으면 운영 지정가). 낙찰가는 기준가의 0.5~3배 안에서만(장터 시세 규칙과 같다)</td></tr>
+          <tr><td>마감 연장</td><td>마감 1분 안에 입찰이 들어오면 1분 연장(최대 5회)</td></tr>
+          <tr><td>자동 입찰</td><td>최대 가격을 정해 두면 대신 입찰한다(방치형 배려)</td></tr>
+          <tr><td>즉시 낙찰</td><td>없음 — 별무리 안에서 값이 정해지게</td></tr>
+          <tr><td>유찰</td><td>입찰이 없으면 다음 나눔으로 한 번 이월. 또 유찰되면 도토가 기준가의 30%에 사 가고, 그 대금을 똑같이 나눈다</td></tr>
+          <tr><td>입찰 화폐</td><td>별가루만. 유료 재화(별꽃)로는 입찰할 수 없다</td></tr>
+        </table></div>
+
+        <h3>대금은 어디로 가나</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>몫</th><th>비율(가안)</th><th>어디로</th><th>세계관</th></tr>
+          <tr><td>큰 등불 몫</td><td class="num">5%</td><td>소멸</td><td>큰 등불에 바치는 한 꼬집</td></tr>
+          <tr><td>깃대 몫</td><td class="num">5%</td><td>별무리 금고</td><td>깃대를 지키는 별무리의 몫</td></tr>
+          <tr><td>나눔 몫</td><td class="num">90%</td><td>그 전투 참가자 전원에게 똑같이(낙찰자 포함)</td><td>함께 싸운 이들의 몫</td></tr>
+        </table></div>
+        <div class="callout note">나눔 몫은 <b>금고를 거치지 않고</b> 참가자에게 바로 간다. “별무리 금고 → 개인 별가루 지급 금지” 원칙(경제 설계)은 그대로다.</div>
+
+        <h3>나눔 자격과 어뷰징 막기</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>위험</th><th>대응</th></tr>
+          <tr><td>전투에 이름만 올리고 몫 받기</td><td>전투 시간의 50% 이상 참여 + 최소 기여(피해·회복·방어 합) 기준을 넘어야 나눔 대상. 탈진해 빠진 시간도 참여로 친다</td></tr>
+          <tr><td>부계정 동원 · 몫 쓸어 담기</td><td>장터 명패가 있어야 입찰·나눔 가능. 가입 7일 미만은 나눔 대상 제외</td></tr>
+          <tr><td>짜고 높은 값에 낙찰(별가루 옮기기)</td><td>낙찰가 기준가 0.5~3배 제한, 같은 낙찰자–참가자 조합 반복 감시, 1인 주간 나눔 상한(서버 중앙 소득 기준)</td></tr>
+          <tr><td>탈퇴 · 재가입으로 몫만 챙기기</td><td>별무리 탈퇴 후 재가입 3일 대기, 진행 중인 나눔은 탈퇴 시 몫 소멸</td></tr>
+          <tr><td>별무리장이 전리품을 독점</td><td>경매는 자동으로 열리고 별무리장도 같은 규칙으로 입찰한다. 분배 방식 변경(“별무리장 지정 분배”)은 없음</td></tr>
+        </table></div>
+        <div class="callout design">깃대 나눔은 ① 별가루 회수처(큰 등불 몫 5% 소멸), ② 접속이 적은 별무리원도 참여만 하면 별가루를 받는 보상, ③ 같은 전리품을 두고 생기는 다툼을 값으로 정리하는 장치다. 장비는 바꾸지 않는 구조라(아이템 설계 9번) 경매 품목은 성장 재료와 외형뿐이다.</div>
+      </section>
     </div>
   </div>
 </section>
@@ -2093,7 +2165,7 @@
   <section class="sec"><h2><span class="no">기준</span>지역 제작 기준 <span class="badge-add">보완</span></h2>
     <div class="tbl-wrap"><table class="tbl">
       <tr><th>항목</th><th>기준</th></tr>
-      <tr><td>지역 구성</td><td>마을(또는 전초기지) 1 + 사냥터 4~6층 + 엘리트 출현 구역 + 보스 방 1 + 숨은 구역 1</td></tr>
+      <tr><td>지역 구성</td><td>마을(또는 전초기지) 1 + 사냥터 4~6구역(구역마다 깊이 무한) + 엘리트 출현 구역 + 보스 방 1 + 숨은 구역 1</td></tr>
       <tr><td>몬스터 수</td><td>일반 4~6종 · 엘리트 1~2종 · 보스 1종 (도감 기준)</td></tr>
       <tr><td>몬스터 속성</td><td>지역 대표 속성이 절반 이상. 나머지는 이웃 지역에서 넘어온 몬스터</td></tr>
       <tr><td>이상현상</td><td>지역마다 “눈에 보이는 별빛 이상현상” 1개. 보스가 깨어 있을 때 / 정화 후 잠잠할 때 두 상태 연출(지형은 바뀌지 않음)</td></tr>
@@ -2293,7 +2365,7 @@
 <dialog id="modal"><button class="modal-close" type="button" aria-label="닫기">✕</button><div id="modalContent"></div></dialog>
 <dialog id="lightbox" class="lightbox"><button class="modal-close" type="button" aria-label="닫기">✕</button><img alt=""><div class="cap"></div></dialog>
 
-<script src="assets/data.js?v=202610171950"></script>
-<script src="assets/app.js?v=202610171950"></script>
+<script src="assets/data.js?v=202610181000"></script>
+<script src="assets/app.js?v=202610181000"></script>
 </body>
 </html>
