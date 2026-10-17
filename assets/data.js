@@ -257,8 +257,9 @@ const MONSTERS = [
   { name: '꿀별 벌', region: 1, element: 'light', grade: '일반', lv: '12–18', emoji: '🐝', added: true, img: 'assets/img/monsters/honey-star-bee.webp',
     gallery: [['assets/img/monsters/honey-star-bee.webp', '컨셉아트']],
     desc: '동글동글한 몸에 노랑·갈색 줄무늬, 별 무늬가 비치는 투명한 날개를 단 벌. 꽃 대신 떨어진 별가루에서 꿀을 모아, 별 모양으로 굳은 꿀 덩이를 품에 안고 클로버 꽃밭 위를 날아다닌다. 꿀이 별처럼 빛난다.', behavior: '무리 지어 다니며 한 마리를 공격하면 주변 벌이 모두 몰려온다.', drops: ['별꿀', '투명 날개'] },
-  { name: '욕심쟁이 왕슬라임', region: 1, element: 'light', grade: '엘리트', lv: '15', emoji: '🫧', trait: '욕심쟁이',
-    desc: '별먼지 슬라임들이 뭉쳐 생긴 커다란 슬라임. 반짝이는 건 뭐든 삼킨다.', behavior: '바닥에 떨어진 드롭 아이템을 주워 먹으며 점점 커진다. 처치하면 먹은 아이템을 두 배로 토해 낸다.', drops: ['삼킨 아이템 ×2', '왕관 젤리'] },
+  { name: '욕심쟁이 왕슬라임', region: 1, element: 'light', grade: '엘리트', lv: '15', emoji: '🫧', trait: '욕심쟁이', img: 'assets/img/monsters/greedy-king-slime.webp',
+    gallery: [['assets/img/monsters/greedy-king-slime.webp', '컨셉아트']],
+    desc: '별먼지 슬라임들이 뭉쳐 생긴 커다란 슬라임. 무지갯빛으로 비치는 몸 위에 말랑한 젤리 왕관과 별 하나를 얹고, 작은 별먼지 슬라임들을 거느린다. 반짝이는 건 뭐든 삼켜서 몸속에 옛 동전·별 조각·보석·산딸기가 둥둥 떠 보인다.', behavior: '바닥에 떨어진 드롭 아이템을 주워 먹으며 점점 커진다. 처치하면 먹은 아이템을 두 배로 토해 낸다.', drops: ['삼킨 아이템 ×2', '왕관 젤리'] },
   { name: '이끼등 거북 「모스모」', region: 1, element: 'earth', grade: '필드보스', lv: '20', emoji: '🐢', added: true,
     desc: '등에 작은 별이끼 언덕을 짊어진 거대한 거북. 등 위 별이끼에 탁한 별빛이 뭉치면 괴로워 날뛴다. 헌터는 거북이 아니라 이끼에 뭉친 탁한 별빛을 정화해 준다.', behavior: '별 숨결(30분)마다 등 위 별이끼가 탁해져 초원을 날뛰며 가로지른다. 정화하면 다시 잠들고, 등 위 작은 마을이 고맙다며 선물을 준다.', drops: ['별이끼 꾸러미', '초원 승급 재료 상자'] },
 
