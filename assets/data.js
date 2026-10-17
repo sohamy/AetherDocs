@@ -260,8 +260,9 @@ const MONSTERS = [
   { name: '욕심쟁이 왕슬라임', region: 1, element: 'light', grade: '엘리트', lv: '15', emoji: '🫧', trait: '욕심쟁이', img: 'assets/img/monsters/greedy-king-slime.webp',
     gallery: [['assets/img/monsters/greedy-king-slime.webp', '컨셉아트']],
     desc: '별먼지 슬라임들이 뭉쳐 생긴 커다란 슬라임. 무지갯빛으로 비치는 몸 위에 말랑한 젤리 왕관과 별 하나를 얹고, 작은 별먼지 슬라임들을 거느린다. 반짝이는 건 뭐든 삼켜서 몸속에 옛 동전·별 조각·보석·산딸기가 둥둥 떠 보인다.', behavior: '바닥에 떨어진 드롭 아이템을 주워 먹으며 점점 커진다. 처치하면 먹은 아이템을 두 배로 토해 낸다.', drops: ['삼킨 아이템 ×2', '왕관 젤리'] },
-  { name: '이끼등 거북 「모스모」', region: 1, element: 'earth', grade: '필드보스', lv: '20', emoji: '🐢', added: true,
-    desc: '등에 작은 별이끼 언덕을 짊어진 거대한 거북. 등 위 별이끼에 탁한 별빛이 뭉치면 괴로워 날뛴다. 헌터는 거북이 아니라 이끼에 뭉친 탁한 별빛을 정화해 준다.', behavior: '별 숨결(30분)마다 등 위 별이끼가 탁해져 초원을 날뛰며 가로지른다. 정화하면 다시 잠들고, 등 위 작은 마을이 고맙다며 선물을 준다.', drops: ['별이끼 꾸러미', '초원 승급 재료 상자'] },
+  { name: '이끼등 거북 「모스모」', region: 1, element: 'earth', grade: '필드보스', lv: '20', emoji: '🐢', added: true, img: 'assets/img/monsters/mosmo.webp',
+    gallery: [['assets/img/monsters/mosmo.webp', '컨셉아트']],
+    desc: '등에 작은 별이끼 언덕을 짊어진 거대한 연두색 거북. 등껍질 위에는 클로버와 들꽃, 별처럼 빛나는 이끼, 큰 나무 한 그루와 작은 마을의 집들이 있고, 등 가장자리로 샘물이 폭포처럼 흘러내린다. 등 위 별이끼에 탁한 별빛이 뭉치면 괴로워 날뛴다. 헌터는 거북이 아니라 이끼에 뭉친 탁한 별빛을 정화해 준다.', behavior: '별 숨결(30분)마다 등 위 별이끼가 탁해져 초원을 날뛰며 가로지른다. 정화하면 다시 잠들고, 등 위 작은 마을이 고맙다며 선물을 준다.', drops: ['별이끼 꾸러미', '초원 승급 재료 상자'] },
 
   // 2. 바람나무 숲
   { name: '이끼뿔 사슴', region: 2, element: 'earth', grade: '일반', lv: '20–26', emoji: '🦌',
