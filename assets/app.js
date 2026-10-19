@@ -135,7 +135,7 @@
     ADV.map(([s, c, a]) => `<tr><td><b>${s}</b></td><td class="num">${c}</td>${a.map(x => `<td>${x}</td>`).join('')}</tr>`).join('');
 
   (function ring() {
-    // 왼쪽: 자연 고리(한 방향 순환) · 오른쪽: 관념의 맞수 두 쌍(서로 ×1.3)
+    // 왼쪽: 자연 고리(한 방향 순환) · 오른쪽: 태초의 맞수 두 쌍(서로 ×1.3)
     let s = `<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--gold)"/></marker></defs>`;
     const node = (p, key) => { const e = ELEMENTS[key];
       return `<circle cx="${p[0]}" cy="${p[1]}" r="24" fill="${e.color}"/><text x="${p[0]}" y="${p[1] - 2}" text-anchor="middle" fill="#fff" font-size="14" font-family="Gowun Batang,serif" font-weight="700">${e.glyph}</text><text x="${p[0]}" y="${p[1] + 13}" text-anchor="middle" fill="#fff" font-size="10">${e.name}</text>`; };
@@ -146,7 +146,7 @@
     s += `<text x="${cx}" y="22" text-anchor="middle" fill="var(--muted)" font-size="12" font-weight="700">자연의 넷 — 도는 고리</text>`;
     pts.forEach((p, i) => { s += line(p, pts[(i + 1) % 4]); });
     pts.forEach((p, i) => { s += node(p, order[i]); });
-    s += `<text x="268" y="22" text-anchor="middle" fill="var(--muted)" font-size="12" font-weight="700">관념의 넷 — 맞수 두 쌍</text>`;
+    s += `<text x="268" y="22" text-anchor="middle" fill="var(--muted)" font-size="12" font-weight="700">태초의 넷 — 맞수 두 쌍</text>`;
     [[['light', 'dark'], 74], [['order', 'chaos'], 150]].forEach(([[a1, b1], y]) => {
       const p = [222, y], q = [314, y];
       s += line(p, q, true) + node(p, a1) + node(q, b1);
