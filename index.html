@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=202610190900">
+<link rel="stylesheet" href="assets/style.css?v=202610191000">
 </head>
 <body>
 
@@ -31,6 +31,7 @@
       <button class="tab" role="tab" data-tab="combat">전투 · 직업</button>
       <button class="tab" role="tab" data-tab="guild">별무리 · PvP</button>
       <button class="tab" role="tab" data-tab="map">월드맵</button>
+      <button class="tab" role="tab" data-tab="content">콘텐츠 · 운영</button>
     </div>
     <div class="tab-group"><span class="tab-group-label">도감</span>
       <button class="tab" role="tab" data-tab="chars">캐릭터</button>
@@ -2336,6 +2337,171 @@
 </section>
 
 <!-- ═══════════════════ 아트 ═══════════════════ -->
+<section class="panel" id="content" role="tabpanel">
+  <div class="doc">
+    <aside class="toc"><b>목차</b><a href="#cn-1">1. 퀘스트 구조</a><a href="#cn-2">2. 업적 · 칭호 · 수집</a><a href="#cn-3">3. 하우징</a><a href="#cn-4">4. 탈것</a><a href="#cn-5">5. 생활 콘텐츠</a><a href="#cn-6">6. 등불 밝히기</a><a href="#cn-7">7. 결사 평판</a><a href="#cn-8">8. 운영 달력</a><a href="#cn-9">9. 랭킹</a><a href="#cn-10">10. UI</a><a href="#cn-11">11. 사운드</a><a href="#cn-12">12. BM 큰 틀</a></aside>
+    <div class="doc-body">
+      <div class="doc-head">
+        <div class="doc-meta"><span>문서 <b>PA-09</b></span><span>버전 <b>v0.1</b></span><span>상태 <b>보완(신규) · 큰 틀</b></span></div>
+        <h1>콘텐츠 · 운영</h1>
+        <p class="lead">세부 수치 전에 정해 두는 큰 틀. 퀘스트(튜토리얼 포함), 수집, 둥지, 탈것, 생활, 서버 공동 목표, 평판, 운영 달력, 랭킹, 화면, 소리, BM의 뼈대.</p>
+      </div>
+      <section class="sec" id="cn-1"><h2><span class="no">01</span>퀘스트 구조 <span class="badge-add">보완</span></h2>
+        <p>메인이 지역을 열고, 지역 고민이 그 지역의 시스템을 가르치고, 의뢰가 반복 루프가 된다. 새 시스템은 언제나 <b>짧은 해금 퀘스트</b> 하나로 열린다. 방치형이라 퀘스트 목적지까지 자동으로 걸어가고, 컷신은 30초 안.</p>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>종류</th><th>무엇</th><th>세계관</th><th>반복</th></tr>
+          <tr><td>메인</td><td>서장~8장(스토리 탭)</td><td>탐사대의 이야기</td><td>한 번(이야기 책으로 다시 보기)</td></tr>
+          <tr><td>튜토리얼 퀘스트</td><td>서장 안에서 기본 시스템을 하나씩 연다(아래 표)</td><td>별방울 마을 사람들의 부탁</td><td>한 번 · 다른 서버 두 번째부터 “빠른 길”</td></tr>
+          <tr><td>해금 퀘스트</td><td>새 시스템이 열릴 때마다 한 개(전직, 별무리, 성좌 전쟁, 요일 던전…)</td><td>신전·회관·공방의 안내</td><td>한 번</td></tr>
+          <tr><td>지역 고민</td><td>지역마다 3개 연작(세계 백과 8번 “요즘 고민”)</td><td>마을 사람들의 진짜 걱정</td><td>한 번</td></tr>
+          <tr><td>동료 이야기</td><td>고르지 않은 주인공 셋의 친밀도 퀘스트</td><td>동료의 일기장</td><td>친밀도 단계마다</td></tr>
+          <tr><td>일일 의뢰</td><td>광장 게시판 쪽지 3개</td><td>부탁 쪽지</td><td>매일</td></tr>
+          <tr><td>주간 관측</td><td>오울라의 지역 관측 목표</td><td>기록관의 관찰 일지</td><td>매주</td></tr>
+          <tr><td>숨은 퀘스트</td><td>성좌의 비밀(오크라의 소문 등), 지역 숨은 구역</td><td>오래된 이야기</td><td>한 번</td></tr>
+          <tr><td>축제 퀘스트</td><td>계절 축제 기간 한정</td><td>축제 준비 돕기</td><td>축제마다</td></tr>
+        </table></div>
+        <h3>튜토리얼 퀘스트 — 서장 안의 열 걸음</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>#</th><th>퀘스트</th><th>여는 것</th><th>누가 부탁하나</th></tr>
+          <tr><td>1</td><td>첫 별똥별</td><td>이동 · 자동사냥 켜기</td><td>오울라 할머니</td></tr>
+          <tr><td>2</td><td>밭의 슬라임</td><td>자동 전투 · 자동 줍기</td><td>별보리 농부</td></tr>
+          <tr><td>3</td><td>투박의 망치</td><td>장비 강화(+1~+3)</td><td>투박</td></tr>
+          <tr><td>4</td><td>헌터 도시락</td><td>도시락 슬롯(자동 음식)</td><td>포근</td></tr>
+          <tr><td>5</td><td>꽃잎 계약제</td><td>성좌 계약 · 공명 1단계</td><td>엘린</td></tr>
+          <tr><td>6</td><td>소원 우물</td><td>별 소원 첫 1회 → 별동무 별솜이 동행</td><td>엘린</td></tr>
+          <tr><td>7</td><td>한 단 더 깊이</td><td>깊이 자동 하강 · 탈진과 깨어남</td><td>투박</td></tr>
+          <tr><td>8</td><td>포근의 장부</td><td>오프라인 보상</td><td>포근</td></tr>
+          <tr><td>9</td><td>욕심쟁이 왕슬라임</td><td>엘리트 성격 · 첫 보스 · 별똥별 상자</td><td>오울라 할머니</td></tr>
+          <tr><td>10</td><td>바람이 부르는 쪽으로</td><td>별빛 다리 → 1장 시작</td><td>삐요</td></tr>
+        </table></div>
+        <div class="callout design">튜토리얼을 따로 두지 않고 서장의 마을 부탁으로 녹인다. 한 퀘스트에 시스템 하나 — 30분 안에 끝나도록. 이후의 시스템은 해금 퀘스트가 같은 방식으로 연다.</div>
+      </section>
+
+      <section class="sec" id="cn-2"><h2><span class="no">02</span>업적 · 칭호 · 수집 보상 <span class="badge-add">보완</span></h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>갈래</th><th>무엇</th><th>세계관</th></tr>
+          <tr><td>업적</td><td>정화 · 깊이 · 탐험 · 수집 · 별무리 · 이야기 · 생활 일곱 갈래</td><td>기록관 오울라의 장부에 이름이 적힌다</td></tr>
+          <tr><td>도감 수집</td><td>몬스터 · 펫 · 변신 · 유물 도감을 채울 때마다 단계 보상</td><td>오울라 할머니의 관찰 일지</td></tr>
+          <tr><td>칭호</td><td>업적 · 순위 · 축제로 얻는다. 머리 위 표시</td><td>헌터 브로치 옆의 작은 리본</td></tr>
+        </table></div>
+        <p><b>원칙</b> — 업적·칭호는 능력치를 주지 않는다. 보상은 외형 · 칭호 · 소원 조각 소량. 능력치는 보유 효과(상한 있음)로만 — 수집을 오래 하는 사람과 신규의 격차가 끝없이 벌어지지 않게.</p>
+      </section>
+
+      <section class="sec" id="cn-3"><h2><span class="no">03</span>하우징 — 둥지 <span class="badge-add">보완</span></h2>
+        <p>헌터마다 둥지 하나. 지역에 따라 모양이 다르다(초원 오두막 · 숲 나무 위 집 · 호수 수상 가옥). 기본 가구 넷은 세계관 그대로 기능을 갖는다.</p>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>가구</th><th>세계관</th><th>기능(가안)</th></tr>
+          <tr><td>화덕</td><td>별 조각 화덕</td><td>제작 예약 칸 +</td></tr>
+          <tr><td>별가루 단지</td><td>보존 · 저금</td><td>창고</td></tr>
+          <tr><td>등불</td><td>떠난 이들의 등불 · 집의 빛</td><td>오프라인 보상 조금 +</td></tr>
+          <tr><td>작은 제단</td><td>작은 성좌(조상) 제단</td><td>별동무 쉼터(펫 탐험 칸 +)</td></tr>
+        </table></div>
+        <p>그 밖의 꾸미기는 모두 외형(능력치 없음) — 축제 · 제작 · BM 외형 경제와 연결. 이웃 둥지 구경 · 별무리 둥지 마을(별무리 회관 옆 땅)은 확장 후보. 시즌 초월에도 둥지는 남는다.</p>
+      </section>
+
+      <section class="sec" id="cn-4"><h2><span class="no">04</span>탈것 <span class="badge-add">보완</span></h2>
+        <p>탈것은 따로 강해지는 시스템이 아니다. 이동 속도는 모든 탈것이 같고, 고르는 재미는 <b>모양과 길</b>이다.</p>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>탈것</th><th>어디서</th><th>얻는 법</th><th>세계관</th></tr>
+          <tr><td>구름양</td><td>초원 · 숲 · 협곡</td><td>빌리기(하루) → 구름버섯을 먹여 길들이면 내 것</td><td>둥실 떠서 이동하는 보통 동물</td></tr>
+          <tr><td>연잎 배</td><td>유리호수</td><td>물방울 마을에서 빌리기</td><td>수인이 올라탈 만큼 큰 연잎</td></tr>
+          <tr><td>들쥐 수레</td><td>마을 사이 길</td><td>배달부 삐요의 수레 얻어 타기(짐 운반 퀘스트)</td><td>작은 수레 — 큰 바퀴 탈것은 없다</td></tr>
+          <tr><td>축제 탈것</td><td>축제</td><td>축제 상점 · 외형</td><td>등불 가마, 눈꽃 썰매 등</td></tr>
+        </table></div>
+        <p>성좌 전쟁 결계와 던전 안에서는 내린다. 펫·변신과 섞지 않는다(뽑기와 무관).</p>
+      </section>
+
+      <section class="sec" id="cn-5"><h2><span class="no">05</span>생활 콘텐츠 <span class="badge-add">보완</span></h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>갈래</th><th>하는 일</th><th>연결</th></tr>
+          <tr><td>채집</td><td>밤의 별 줍기, 버섯 · 꽃 · 열매 따기(지역마다 다름)</td><td>요리 · 꽃물 · 문양 재료</td></tr>
+          <tr><td>별 건지기</td><td>호수 · 강에서 떨어진 별 조각을 그물로(낚시 대체)</td><td>별 조각 · 유리 결정 · 희귀 수집품</td></tr>
+          <tr><td>제작</td><td>여관 화덕 · 공방(아이템 설계 14+)</td><td>음식 · 직업 전용 소모품</td></tr>
+        </table></div>
+        <p>세 갈래 모두 <b>생활 숙련</b>(1~10)을 갖고 시즌 초월에도 남는다. 방치형이라 채집 · 별 건지기는 별동무 탐험과 자동 제작 예약으로도 돌아간다. 흐름: 채집 → 제작 → 장터.</p>
+      </section>
+
+      <section class="sec" id="cn-6"><h2><span class="no">06</span>서버 공동 목표 — 등불 밝히기 <span class="badge-add">보완</span></h2>
+        <p>서버(하늘 한 장)의 헌터 모두가 마을 큰 등불에 별가루와 재료를 바쳐 등불을 키운다. 슬로건 “작은 우리가, 하늘을 채운다”를 시스템으로 보여 주는 장치이자 큰 별가루 회수처.</p>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>단계</th><th>바치는 것</th><th>마을이 얻는 것</th></tr>
+          <tr><td>등불 1~3단</td><td>별가루 · 지역 재료</td><td>상점 품목 확장, 여관 도시락 칸 +, 광장 장식</td></tr>
+          <tr><td>등불 4~6단</td><td>별가루 · 보스 재료</td><td>새 공방 레시피, 마을 축제 규모 확대</td></tr>
+          <tr><td>등불 7단~</td><td>별가루 · 레이드 재료</td><td>마을 외형 변화(지붕 · 깃대 · 빛), 서버 칭호</td></tr>
+        </table></div>
+        <p>세계관: 헌터 수칙 4 “주운 별가루의 한 꼬집은 마을에”. 마을마다 등불이 따로라 지역별 기여 순위가 생긴다. 등불은 시즌이 바뀌어도 쌓인다(마을은 초기화되지 않는다). 개인 보상은 기여 리본(외형) — 성장 수치는 주지 않는다.</p>
+      </section>
+
+      <section class="sec" id="cn-7"><h2><span class="no">07</span>결사 평판 — 두 개의 신뢰 <span class="badge-add">보완</span></h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>신뢰</th><th>올리는 법</th><th>여는 것</th></tr>
+          <tr><td>마을 신뢰</td><td>지역 고민 · 일일 의뢰 · 등불 밝히기</td><td>마을 상점 · 공방 레시피 · 마을 칭호</td></tr>
+          <tr><td>천막촌 신뢰</td><td>천막촌 의뢰 · 리코의 부탁 · 별멀미 아이들 돕기(5장 이후)</td><td>천막촌 상점(결사 외형 · 별잔해 요리) · 결사 숨은 이야기</td></tr>
+        </table></div>
+        <p>두 신뢰는 서로 깎이지 않는다 — 둘 다 올릴 수 있다. 다만 일부 퀘스트에서 어느 쪽 편을 들지 고르는 갈림길이 있고, 7장 휴전 · 에필로그 “별지기”가 두 신뢰를 하나로 묶는다(진영 PvP는 없다).</p>
+      </section>
+
+      <section class="sec" id="cn-8"><h2><span class="no">08</span>라이브 운영 달력 — 한 시즌 9주 <span class="badge-add">보완</span></h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>주차</th><th>철</th><th>축제 · 이벤트</th><th>경쟁</th></tr>
+          <tr><td>1–2</td><td>싹별철</td><td>🌸 꽃잎 계약제 · 시즌 시작 · 신규 유입</td><td>별무리 재편</td></tr>
+          <tr><td>3–4</td><td>반딧철</td><td>🏮 등불 축제(루체의 날) · 등불 밝히기 주간</td><td>영지 · 성좌 전쟁 개방</td></tr>
+          <tr><td>5–6</td><td>도토리철</td><td>🌰 도토리 수확제 · 지역 순회 이벤트</td><td>성좌 전쟁</td></tr>
+          <tr><td>7–8</td><td>서리철</td><td>🔔 첫눈 종 축제(린의 날) · 레이드</td><td>천궁 진출 경쟁 → 8주차 천궁 쟁탈전</td></tr>
+          <tr><td>9</td><td>별 사이 철</td><td>✨ 하늘 바뀌는 밤 축제 · 하늘 공양</td><td>초월 · 서버 이전</td></tr>
+        </table></div>
+        <p>매주 토요일 별비(국왕 선포), 철마다 픽업 = 그 철의 성좌(세계 백과 31번), 자연현상(별비 · 별안개 · 빈 밤)은 운영자가 켜고 끄는 라이브 도구(세계 백과 21번).</p>
+      </section>
+
+      <section class="sec" id="cn-9"><h2><span class="no">09</span>랭킹 체계 <span class="badge-add">보완</span></h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>단위</th><th>순위</th><th>주기</th></tr>
+          <tr><td>개인</td><td>지역별 최고 깊이 · 요일 던전 최고 단계 · 겨루기 연습장 · 도감 수집</td><td>주간 · 시즌 · 역대</td></tr>
+          <tr><td>별무리</td><td>전쟁 별빛 · 천궁 쟁탈전 · 등불 기여</td><td>시즌</td></tr>
+          <tr><td>하늘(서버)</td><td>성좌 밝기 순위 · 마을 등불 단계</td><td>실시간</td></tr>
+        </table></div>
+        <p><b>원칙</b> — 순위 보상은 칭호 · 외형 · 천궁 벽 이름뿐, 능력치 없음. 한곳(미오의 순위판)에서 모두 본다. 시즌 기록과 역대 기록을 함께 남긴다.</p>
+      </section>
+
+      <section class="sec" id="cn-10"><h2><span class="no">10</span>UI · 화면 구성 <span class="badge-add">보완</span></h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>화면</th><th>큰 틀</th></tr>
+          <tr><td>메인(사냥)</td><td>필드가 화면 대부분. 위: 별가루 · 별빛 · 지금 깊이. 아래: 스킬 3칸 · 성좌 강림 게이지 · 도시락. 오른쪽: 퀘스트 추적 · 이벤트 알림</td></tr>
+          <tr><td>메뉴 여섯</td><td>헌터(장비 · 전직 · 공명) · 별동무(펫 · 변신 · 별 소원) · 가방 · 별무리 · 마을(상점 · 공방 · 둥지) · 하늘(시즌 · 천궁 · 순위)</td></tr>
+          <tr><td>절전 모드</td><td>화면을 어둡게, 숫자만 — 밤하늘 위에 별가루 숫자가 올라간다</td></tr>
+          <tr><td>복귀 화면</td><td>여관 장부를 넘기는 연출로 쌓인 숫자가 한꺼번에 올라간다</td></tr>
+          <tr><td>세계관 표기</td><td>“포션 · 골드 · 경험치” 대신 세계관 말을 쓰고, 툴팁에 일반 용어를 함께 적는다(생활 설정집 20번)</td></tr>
+        </table></div>
+      </section>
+
+      <section class="sec" id="cn-11"><h2><span class="no">11</span>사운드 방향 <span class="badge-add">보완</span></h2>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>항목</th><th>원칙</th></tr>
+          <tr><td>톤</td><td>작은 손으로 연주하는 소리 — 오르골 · 종 · 목관 · 작은 현. 웅장한 오케스트라는 천궁 · 결말에만</td></tr>
+          <tr><td>지역 악기</td><td>초원 오카리나 · 숲 피리(바람 소리) · 호수 유리 하프 · 협곡 북 · 성도 오르간 · 별의 눈 낮은 맥박음 · 천궁 합창</td></tr>
+          <tr><td>밤과 낮</td><td>같은 곡의 낮 판 · 밤 판(밤엔 별 반짝임이 얹힌다)</td></tr>
+          <tr><td>전투음</td><td>때리는 소리보다 반짝임 · 퐁 · 딸랑 — 피 · 비명 없음. 탈진은 작은 별이 떠오르는 소리</td></tr>
+          <tr><td>성좌의 말</td><td>목소리 대신 별빛 떨림 음향 + 자막(계약자에게만 들리는 설정). 네무 장면만 노랫가락처럼</td></tr>
+        </table></div>
+      </section>
+
+      <section class="sec" id="cn-12"><h2><span class="no">12</span>BM — 큰 틀(확정 아님) <span class="badge-add">보완</span></h2>
+        <p>BM은 아직 확정하지 않는다(로드맵 4번). 다만 다른 시스템과 부딪치지 않도록 <b>선</b>과 <b>후보</b>만 정해 둔다.</p>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>구분</th><th>내용</th></tr>
+          <tr><td>팔지 않는 것(선)</td><td>성장 수치(레벨 · 공명 · 배수 · 성흔), 별가루로 바꿀 수 있는 유료 재화, 장비 강화 결과, 결계 안 전투력</td></tr>
+          <tr><td>후보 ①</td><td>외형 — 의상 · 염색 · 둥지 꾸미기 · 탈것 모양</td></tr>
+          <tr><td>후보 ②</td><td>편의 — 가방 · 창고 칸, 자동 제작 예약 칸, 오프라인 시간(경쟁 영향 검토 필요)</td></tr>
+          <tr><td>후보 ③</td><td>시즌 패스 — 9주 동안의 외형 · 소원 조각 보상 줄</td></tr>
+          <tr><td>후보 ④</td><td>별 소원(뽑기) — 유료 재화 별꽃으로 소원 조각을 살 수 있게 할지가 가장 큰 결정. 천장 · 확률 공개 필수</td></tr>
+        </table></div>
+        <div class="callout note">정할 때 함께 볼 것: 펫 · 변신 보유 효과 상한(성장 5번), 결계 정규화(별무리 4번), 경제의 회수 구조(세계 백과 5+). 뽑기를 유료로 열면 보유 효과 상한이 사실상 과금 격차의 상한이 된다.</div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
 <section class="panel" id="art" role="tabpanel">
   <div class="doc">
     <aside class="toc"><b>목차</b>
@@ -2455,7 +2621,7 @@
 <dialog id="modal"><button class="modal-close" type="button" aria-label="닫기">✕</button><div id="modalContent"></div></dialog>
 <dialog id="lightbox" class="lightbox"><button class="modal-close" type="button" aria-label="닫기">✕</button><img alt=""><div class="cap"></div></dialog>
 
-<script src="assets/data.js?v=202610190900"></script>
-<script src="assets/app.js?v=202610190900"></script>
+<script src="assets/data.js?v=202610191000"></script>
+<script src="assets/app.js?v=202610191000"></script>
 </body>
 </html>
